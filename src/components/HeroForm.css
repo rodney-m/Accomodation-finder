@@ -1,0 +1,95 @@
+.HeroForm {
+  height: 100%;
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-form-container {
+  background: #fff;
+  border-radius: 2px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22); */
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  max-width: 100%;
+  min-height: 300px;
+
+  -webkit-box-shadow: -1px 2px 8px -1px #000000;
+  -moz-box-shadow: -1px 2px 8px -1px #000000;
+  box-shadow: -1px 2px 8px -1px #000000;
+}
+.main-form-container .form-headings {
+  height: 40px;
+  display: flex;
+  position: relative;
+}
+
+.main-form-container .form-headings :hover {
+  cursor: pointer;
+}
+
+.login-heading,
+.register-heading {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #186aa5;
+  font-weight: 300;
+}
+
+.bottom_border {
+  border: 1px solid #186aa5;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
+}
+.toggle_bottom_border {
+  right: 0;
+}
+.active {
+  display: none;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  height: 100%;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-container input {
+  background: #fff;
+  border: 1px solid #73a1c2;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+.form-container a.forgot-pass {
+  font-size: 0.7em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.form-container button {
+  border-radius: 2px;
+  border: 0;
+  background: #186aa5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}

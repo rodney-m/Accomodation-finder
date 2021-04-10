@@ -1,0 +1,31 @@
+.navbar {
+  background-color: #fefefe;
+  box-shadow: 0 2px 2px -2px #333333;
+  height: 3.25rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 10px 30px;
+}
+
+.navbar .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .container img {
+  height: 80%;
+  object-fit: contain;
+}
+
+ul li {
+  display: inline;
+  padding: 10px 20px;
+}
