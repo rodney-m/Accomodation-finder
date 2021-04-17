@@ -1,5 +1,5 @@
 .Hero {
-  height: 100vh;
+  height: calc(100vh - 3.25rem);
   background-color: var(--mainLightBlue);
   background: linear-gradient(
       to right bottom,
