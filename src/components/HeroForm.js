@@ -12,11 +12,11 @@ function HeroForm() {
   return (
     <div className="HeroForm">
       <div className="main-form-container">
-        <div onClick={toggler} className="form-headings">
-          <div className="login-heading">
+        <div className="form-headings">
+          <div onClick={toggler} className="login-heading">
             <p>Login</p>
           </div>
-          <div className="register-heading">
+          <div onClick={toggler} className="register-heading">
             <p>Register</p>
           </div>
           <div

@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "./HomepageHero.css";
 import HeroForm from "./HeroForm";
 import { FaCheck } from "react-icons/fa";
 
