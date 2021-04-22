@@ -28,4 +28,42 @@
 ul li {
   display: inline;
   padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.nav-icon {
+  float: right;
+  display: none;
+}
+
+.mobile-menu li {
+  display: block;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.mobile-menu li:hover {
+  background-color: #f9f9f9;
+}
+
+.mobile-menu {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+.show-mobile-menu {
+  display: block;
+}
+
+@media (max-width: 550px) {
+  .nav-icon {
+    display: block;
+  }
+  .desktop-nav {
+    display: none;
+  }
 }

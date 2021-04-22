@@ -10,3 +10,7 @@
 :root {
   --mainLightBlue: #e8eff7;
 }
+
+body {
+  color: #333333;
+}

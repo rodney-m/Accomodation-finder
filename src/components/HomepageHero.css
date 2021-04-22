@@ -56,6 +56,9 @@
 }
 /* media queries */
 @media (max-width: 850px) {
+  .Hero {
+    height: auto;
+  }
   .Hero .container {
     padding: 20px;
   }
@@ -65,5 +68,25 @@
   }
   .heroText .container {
     align-items: center;
+  }
+
+  .heroText .container h1 {
+    font-size: 2.2rem;
+    line-height: 40px;
+  }
+  .heroText .container h2 {
+    font-size: 1.3rem;
+    line-height: 25px;
+  }
+
+  .tags div {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #333333;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: 11px;
   }
 }
