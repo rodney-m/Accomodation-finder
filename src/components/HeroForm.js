@@ -33,7 +33,7 @@ function HeroForm() {
               <input type="text" placeholder="Registration No." />
               <input type="password" placeholder="Password" />
               <button>LOGIN</button>
-              <a href="#" className="forgot-pass">
+              <a href="login/" className="forgot-pass">
                 Forgot your password?
               </a>
             </div>
