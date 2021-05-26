@@ -1,0 +1,28 @@
+.Error {
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.ErrorBanner{
+    background-color: #f9f9f9;
+    padding: 40px;
+
+}
+
+.Error h1{
+    font-size: 50px;
+}
+
+.Error .errorBtn{
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    padding: 16px 30px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+}
+
+.Error .errorBtn:hover{
+    filter: brightness(0.8);
+}

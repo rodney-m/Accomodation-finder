@@ -1,0 +1,25 @@
+.NavBar{
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px #dbdbdb;
+    height: 10vh;
+    padding: 5px;
+}
+
+.NavBar .headerLogo{
+    height: 80% !important;
+    object-fit: contain;
+}
+
+.NavBar a{
+    height: 100%;
+}
+
+.NavBar .navLinks li{
+    display: inline;
+    list-style: none;
+    margin-right: 20px;
+}

@@ -1,0 +1,45 @@
+.showcase{
+    height: 90vh;
+    background: linear-gradient(to right, rgba(23, 64, 153, 0.705), rgba(0, 255, 242, 0.74)),
+    url('../images/showcase.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.showcase h1{
+    text-transform: capitalize;
+    font-size: 3.5em;
+    margin: 10px 0;
+}
+
+.showcase p{
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.showcase .ctas span{
+    background-color: #fff;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    width: 170px;
+    text-transform: uppercase;
+}
+
+.Home .bottom{
+    padding: 30px;
+    text-align: center;
+}
+
+.Home .bottom h2{
+    font-size: 2.0em;
+    margin: 20px 0;
+}
