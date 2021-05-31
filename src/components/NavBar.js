@@ -10,10 +10,28 @@ function NavBar() {
                  <img className="headerLogo" src={Logo} alt="HIT Logo" />
             </Link>
             <ul className="navLinks">
+    
+                <Link to="/Apply">
+                <li>Apply</li>
+                </Link>
+
+                <Link to="/Houses">
+                <li>Houses</li>
+                </Link>
+
+                <Link to="/Hostels">
                 <li>Hostels</li>
-                <li>Off Campus</li>
-                <li>About</li>
-                <li>Services</li>
+                </Link>
+
+                <Link to="/Help">
+                <li>Help</li>
+                </Link>
+
+                <Link to="/Contact">
+                <li>Contact</li>
+                </Link>
+
+                
             </ul>
         </div>
     )

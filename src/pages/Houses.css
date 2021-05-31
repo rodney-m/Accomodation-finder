@@ -1,0 +1,32 @@
+.Houses {
+    padding: 30px;
+  }
+  
+  .Houses .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .Houses .container a {
+    color: #333;
+    text-decoration: none;
+  }
+  .Houses .container .hostel {
+    display: flex;
+    background-color: #f9f9f9;
+    margin: 16px;
+  }
+  .Houses .container .hostel .hostelThumbnail {
+    flex: 0.35;
+  }
+  .Houses .container .hostel .hostelThumbnail img {
+    width: 100%;
+  }
+  .Houses .container .hostel .hostelDetails {
+    flex: 0.65;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+  }
+  
