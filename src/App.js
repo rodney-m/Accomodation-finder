@@ -16,6 +16,7 @@ import H1 from "./pages/H1"
 import H2 from "./pages/H2"
 import H3 from "./pages/H3"
 import H4 from "./pages/H4"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
 
@@ -27,12 +28,13 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/login2" component={LogIn2} />
-          <Route exact path="/Apply" component={Apply} />
+          <Route exact path="/apply" component={Apply} />
           <Route exact path="/Help" component={Help} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Hostels" component={Hostels} />
           <Route exact path="/Houses" component={Houses} />
           <Route exact path="/SingleRoom" component={SingleRoom} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/H1" component={H1} />
           <Route exact path="/H2" component={H2} />
           <Route exact path="/H3" component={H3} />

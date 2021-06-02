@@ -1,0 +1,37 @@
+.DashboardSideBar{
+    background-color: #ffffff;
+    height: 100vh;
+    flex-basis: 25%;
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.418);
+    z-index: 5;
+}
+
+header.sideHeader{
+    border-bottom: 1px solid #ccc;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.sideMenu .sideMenu-links{
+    list-style-type: none;
+}
+
+.sideMenu .sideMenu-links a{
+    text-decoration: none;
+    color: #333;
+}
+
+.sideMenu .sideMenu-links li{
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.sideMenu .sideMenu-links li:hover{
+    border-right: 2px solid cornflowerblue;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
