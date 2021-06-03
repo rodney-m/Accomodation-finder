@@ -17,8 +17,11 @@ function Home() {
                     
                         <span onClick={loginWithRedirect}>LogIn / SignUp</span>
                     
-                    <Link to="/houses">
-                         <span> Houses</span>
+                    <Link to="/Houses">
+                         <span>Houses</span>
+                    </Link>
+                    <Link to="/Hostels">
+                         <span> Hostels</span>
                     </Link>
                 </div>  
                 <h3> User is {isAuthenticated ? "Logged in" : "Not logged in"}</h3>      

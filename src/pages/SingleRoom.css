@@ -1,0 +1,66 @@
+.SingleRoom {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+  }
+  
+  .roomDetails {
+    width: 50%;
+    line-height: 2;
+  }
+  
+  .roomDetails .title {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  .roomDetails .location {
+    font-weight: 300;
+  }
+  
+  .roomDetails > span {
+    margin: 5px;
+    background-color: #333333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 0;
+  }
+  
+  .roomDetails .prize {
+    margin-top: 25px;
+    font-size: 30px;
+  }
+  .roomDetails .cta {
+    margin-top: 20px;
+  }
+  
+  .roomDetails .cta button {
+    padding: 10px 30px;
+    border: 0;
+    margin-right: 10px;
+    border-radius: 7px;
+    font-weight: 600;
+  }
+  
+  .roomImages {
+    width: 50%;
+  }
+  .roomImages .mainImage img {
+    width: 100%;
+    max-height: 400px;
+  }
+  .roomImages .otherImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+  }
+  .roomImages .otherImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .roomImages .otherImages img {
+    width: 100%;
+    border: 1px solid #eeeeee;
+  }
+  

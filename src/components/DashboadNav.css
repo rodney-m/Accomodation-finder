@@ -1,0 +1,33 @@
+.DashboardNav{
+    box-shadow: 0 4px 2px -2px #dbdbdb;
+    height: 10vh;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DashboardNav .left, .DashboardNav .right{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.DashboardNav .left .MuiSvgIcon-root{
+    margin: 0 10px;
+}
+.DashboardNav .right .MuiSvgIcon-root{
+    margin: 0 10px;
+}
+.DashboardNav .right p.user{
+    margin: 0 5px;
+    font-size: 0.9rem;
+}
+.DashboardNav .right .logout-btn{
+    font-size: 0.8rem;
+    background-color: tomato;
+    padding: 10px 20px;
+    color: #fff;
+    border: 0;
+    margin: 0 10px;
+}
