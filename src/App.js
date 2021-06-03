@@ -17,6 +17,7 @@ import H2 from "./pages/H2"
 import H3 from "./pages/H3"
 import H4 from "./pages/H4"
 import Dashboard from "./pages/Dashboard"
+import DashboadNav from './components/DashboadNav';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     <div className="App">
        <Router>
         <NavBar />
+        <DashboadNav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={LogIn} />

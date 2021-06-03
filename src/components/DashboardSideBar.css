@@ -1,9 +1,10 @@
 .DashboardSideBar{
     background-color: #ffffff;
-    height: 100vh;
+    height: 85vh;
     flex-basis: 25%;
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.418);
     z-index: 5;
+    border-top: 1px solid #ccc;
 }
 
 header.sideHeader{

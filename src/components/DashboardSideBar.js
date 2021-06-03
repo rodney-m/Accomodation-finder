@@ -11,16 +11,16 @@ function DashboardSideBar() {
             <div className="sideMenu">
                 <ul className="sideMenu-links">
                     <Link to="/">
-                        <li>Orders</li>
+                        <li>Overview</li>
                     </Link>
                     <Link to="/add-customer">
-                        <li>Add Customer</li>
+                        <li>Applications</li>
                     </Link>
                     <Link to="/customers">
-                        <li>Customers</li>                        
+                        <li>Requests</li>                        
                     </Link>
                     <Link>
-                        <li>Add New User</li>
+                        <li>Settings</li>
                     </Link>                    
                 </ul>
             </div>
