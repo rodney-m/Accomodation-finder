@@ -5,7 +5,6 @@ import {Link, useLocation} from "react-router-dom";
 
 function NavBar() {
             let location = useLocation();
-            console.log(location.pathname)
     if (location.pathname != "/dashboard") {
         return (
             <div className="NavBar">

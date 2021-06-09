@@ -1,3 +1,4 @@
-.DashboardNav{
-    flex-basis: 75%;
+.DashboardMain{
+    min-height: 800px;
+    flex-grow: 1;
 }

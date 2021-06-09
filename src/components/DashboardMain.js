@@ -1,12 +1,17 @@
-import React from 'react'
-import "./DashboardMain.css"
+import React from "react";
+import "./DashboardMain.css";
+import { useParams } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+import Overview from "./Overview";
+import PieChart from "./PieChart";
+import H1 from "./H1";
 
 function DashboardMain() {
-    return (
-        <div className="DashboadMain">
-            <h1>Main</h1>
-        </div>
-    )
+    let { slug } = useParams();
+  
+      return <Overview />
+  
 }
 
-export default DashboardMain
+export default DashboardMain;

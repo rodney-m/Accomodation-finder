@@ -1,11 +1,11 @@
 import React from 'react'
 
-function H4() {
+function Requests() {
     return (
         <div>
-            <h1>h4</h1>
+            <h1>Requests</h1>
         </div>
     )
 }
 
-export default H4
+export default Requests

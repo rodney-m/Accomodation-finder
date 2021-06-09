@@ -1,20 +1,13 @@
 .DashboardSideBar{
-    background-color: #ffffff;
-    height: 85vh;
-    flex-basis: 25%;
+    background-color: #333;
+    color: #ddd;
+    height: 100vh;
+    flex-basis: 200px;
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.418);
     z-index: 5;
     border-top: 1px solid #ccc;
 }
 
-header.sideHeader{
-    border-bottom: 1px solid #ccc;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
 
 
 .sideMenu .sideMenu-links{
@@ -23,16 +16,30 @@ header.sideHeader{
 
 .sideMenu .sideMenu-links a{
     text-decoration: none;
-    color: #333;
+    color: #fff;
 }
 
 .sideMenu .sideMenu-links li{
     padding: 20px 30px;
-    border-bottom: 1px solid #eee;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+.sideMenu .sideMenu-links li.dropdown_parent{
+    display: block;
+}
+
+
+.sideMenu .sideMenu-links li .MuiSvgIcon-root{
+    margin-right: 20px;
+    color: #ccc;
 }
 
 .sideMenu .sideMenu-links li:hover{
-    border-right: 2px solid cornflowerblue;
     cursor: pointer;
-    background-color: #f9f9f9;
+    background-color: #111;
+}
+
+.sideMenu .sideMenu-links li li:hover{
+    background-color: #333;
 }

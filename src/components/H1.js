@@ -1,9 +1,10 @@
 import React from 'react'
+import "./Hostel.css"
 
 function H1() {
     return (
-        <div>
-            <h1> h1</h1>
+        <div className="Hostel">
+            
         </div>
     )
 }

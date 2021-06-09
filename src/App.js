@@ -12,12 +12,9 @@ import Contact from "./pages/Contact"
 import Hostels from "./pages/Hostels"
 import Houses from "./pages/Houses"
 import SingleRoom from "./pages/SingleRoom"
-import H1 from "./pages/H1"
-import H2 from "./pages/H2"
-import H3 from "./pages/H3"
-import H4 from "./pages/H4"
 import Dashboard from "./pages/Dashboard"
 import DashboadNav from './components/DashboadNav';
+import H1 from './components/H1';
 
 function App() {
 
@@ -37,10 +34,7 @@ function App() {
           <Route exact path="/Houses" component={Houses} />
           <Route exact path="/SingleRoom" component={SingleRoom} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/H1" component={H1} />
-          <Route exact path="/H2" component={H2} />
-          <Route exact path="/H3" component={H3} />
-          <Route exact path="/H4" component={H4} />
+          
           <Route component={Error} />
         </Switch>
       </Router>
