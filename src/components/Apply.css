@@ -1,0 +1,40 @@
+.Apply{
+    min-height : 90vh;
+    display: flex;
+}
+
+.Apply .left{
+    background-color: red;
+    flex: 1;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.704)),
+    url('../images/showcase.jpg');
+    background-size: cover;
+}
+
+.Apply .right{
+    background-color: yellow;
+    flex: 1;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.704)),
+    url('../images/off-campus.jpg');
+    background-size: cover;
+}
+
+.Apply .left, .Apply .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    color: #fff;
+}
+
+.Apply .left a, .Apply .right a{
+    text-decoration: none;
+}
+
+.Apply .btn{
+    background-color: cornflowerblue;
+    color: white;
+    padding: 16px 35px;
+    margin-top: 30px;    
+}
+

@@ -6,7 +6,6 @@ import Error from "./pages/Error"
 import NavBar from "./components/NavBar"
 import LogIn from "./pages/Login"
 import LogIn2 from "./pages/Login2"
-import Apply from "./pages/Apply"
 import Help from "./pages/Help"
 import Contact from "./pages/Contact"
 import Hostels from "./pages/Hostels"
@@ -15,6 +14,9 @@ import SingleRoom from "./pages/SingleRoom"
 import Dashboard from "./pages/Dashboard"
 import DashboadNav from './components/DashboadNav';
 import H1 from './components/H1';
+import Apply from './components/Apply';
+import ApplyOncampus from "./components/ApplyOncampus"
+import ViewHostel from './pages/ViewHostel';
 
 function App() {
 
@@ -27,10 +29,13 @@ function App() {
           <Route  path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Home} />
           <Route exact path="/apply" component={Apply} />
-          <Route exact path="/Help" component={Help} />
-          <Route exact path="/Contact" component={Contact} />
-          <Route exact path="/Houses" component={Houses} />
-          <Route exact path="/SingleRoom" component={SingleRoom} />
+          <Route exact path="/help" component={Help} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/houses" component={Houses} />
+          <Route exact path="/singleRoom" component={SingleRoom} />
+          <Route exact path="/apply" component={Apply} />
+          <Route exact path="/apply/oncampus" component={ApplyOncampus} />
+          <Route exact path="/apply/oncampus/view" component={ViewHostel} />
           <Route  path="/dashboard" component={Dashboard} />
           
           <Route component={Error} />
