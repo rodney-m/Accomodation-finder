@@ -22,18 +22,16 @@ function App() {
     <div className="App">
        <Router>
         <NavBar />
-        <DashboadNav />
+        
         <Switch>
+          <Route  path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/login2" component={LogIn2} />
           <Route exact path="/apply" component={Apply} />
           <Route exact path="/Help" component={Help} />
           <Route exact path="/Contact" component={Contact} />
-          <Route exact path="/Hostels" component={Hostels} />
           <Route exact path="/Houses" component={Houses} />
           <Route exact path="/SingleRoom" component={SingleRoom} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route  path="/dashboard" component={Dashboard} />
           
           <Route component={Error} />
         </Switch>

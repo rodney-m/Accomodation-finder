@@ -1,0 +1,34 @@
+.Modal{
+    background-color: rgba(0, 0, 0, 0.788);
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 300px;
+    padding: 30px 20px;
+    
+}
+
+.close{
+    color: white;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.closeBtn{
+    color: white;
+}
+
+.close:hover{
+    transform: rotate(30deg);
+}
+
+
+
+.Modal table tr td{
+    border-bottom: 1px solid #ccc !important;
+    padding: 16px;
+}

@@ -2,39 +2,41 @@ import React, {useState} from "react";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import {IconButton} from "@material-ui/core";
-import Modal from "./Modal";
+import Modal from "./Modal"
 
-function H1() {
+
+function H3() {
   const [currentIndex, setCurrentIndex] = useState(null);
-  const h1 = [
+
+  const H3 = [
     {
-      reg_no: "H190197F",
-      fname: "Rodney Anesu",
-      lname: "Mupanduki",
+      reg_no: "H170197F",
+      fname: "Jane ",
+      lname: "Doe",
       year: "2.2",
       room_no: 110,
       department: "ICS",
     },
     {
-      reg_no: "H190415Z",
-      fname: "Lionnel",
-      lname: "Tsuro",
+      reg_no: "H180415Z",
+      fname: "Donald",
+      lname: "Trump",
       year: "2.2",
       room_no: 110,
       department: "ICS",
     },
     {
-      reg_no: "H190232Q",
-      fname: "Keith Panpan",
-      lname: "Charedzera",
+      reg_no: "H180232Q",
+      fname: "Sky",
+      lname: "Blue",
       year: "2.2",
       room_no: 109,
       department: "ICS",
     },
     {
       reg_no: "H190086F",
-      fname: "Tinotenda",
-      lname: "Mukwazhe",
+      fname: "Drake",
+      lname: "Future",
       year: "2.2",
       room_no: 109,
       department: "ICS",
@@ -42,7 +44,7 @@ function H1() {
   ];
   return (
     <div className="Hostel">
-        <h1>Hostel 1</h1>
+        <h1>Hostel 3</h1>
       <span className="pending-btn">Pending</span>
       <table cellSpacing="0">
         <thead>
@@ -57,18 +59,18 @@ function H1() {
           </tr>
         </thead>
         <tbody>
-          {h1.map((h1, index) => {
+          {H3.map((H3, index) => {
             return (
               <tr>
-                <td>{h1.reg_no}</td>
-                <td>{h1.fname}</td>
-                <td>{h1.lname}</td>
-                <td>{h1.year}</td>
-                <td>{h1.room_no}</td>
-                <td>{h1.department}</td>
+                <td>{H3.reg_no}</td>
+                <td>{H3.fname}</td>
+                <td>{H3.lname}</td>
+                <td>{H3.year}</td>
+                <td>{H3.room_no}</td>
+                <td>{H3.department}</td>
                 <td>
-                  <IconButton onClick={() => setCurrentIndex(index)}>
-                    <InfoIcon className="info" />
+                  <IconButton>
+                    <InfoIcon className="info"  onClick={() => setCurrentIndex(index)} />
                   </IconButton>
                 </td>
               </tr>
@@ -77,9 +79,9 @@ function H1() {
         </tbody>
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
-      {currentIndex !== null && <Modal data={h1[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+      {currentIndex !== null && <Modal data={H3[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
     </div>
   );
 }
 
-export default H1;
+export default H3;
