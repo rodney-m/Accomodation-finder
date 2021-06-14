@@ -5,6 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #333;
+    color: white;
 }
 
 .DashboardNav .left, .DashboardNav .right{
