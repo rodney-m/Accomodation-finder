@@ -35,7 +35,7 @@ function ApplyOnCampus() {
     <div className="ApplyOncampus">
       {Hostels.map((hostel, index) => {
         return (
-          <Link to="/apply/oncampus/view/">
+          <Link to="/apply/oncampus/">
             <div
               className="hostelThumbnail"
               onClick={() => setCurrentIndex(index)}
