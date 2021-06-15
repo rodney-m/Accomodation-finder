@@ -16,7 +16,7 @@ import DashboadNav from './components/DashboadNav';
 import H1 from './components/H1';
 import Apply from './components/Apply';
 import ApplyOncampus from "./components/ApplyOncampus"
-import ViewHostel from './pages/ViewHostel';
+import ViewHostel from './components/ViewHostel';
 
 function App() {
 

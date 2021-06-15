@@ -3,6 +3,7 @@ import "./ApplyOncampus.css";
 import HostelsImg from "../images/hostels.jpg";
 import { FcBusinessman, FcBusinesswoman } from "react-icons/fc";
 import {Link} from "react-router-dom"
+import ViewHostel from "./ViewHostel";
 
 function ApplyOnCampus() {
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -51,12 +52,14 @@ function ApplyOnCampus() {
                   </span>
                 </h4>
                 <h2>$ {hostel.prize}</h2>
-                {currentIndex}
               </div>
             </div>
           </Link>
         );
       })}
+
+     
+      {currentIndex !== null ? <ViewHostel hostel={Hostels[currentIndex]} setCurrentIndex={setCurrentIndex}/> : ""}
     </div>
   );
 }

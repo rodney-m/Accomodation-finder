@@ -1,10 +1,10 @@
 import React from 'react'
 import "./ViewHostel.css"
 
-function ViewHostel() {
+function ViewHostel({hostel}) {
     return (
         <div className="ViewHostel">
-            <h1>Hostel</h1>
+            <h1>{hostel.name}</h1>
         </div>
     )
 }
