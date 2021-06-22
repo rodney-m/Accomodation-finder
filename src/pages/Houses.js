@@ -3,6 +3,7 @@ import "./Houses.css";
 import { Link } from "react-router-dom";
 import hostel from "../images/hostel.jpeg";
 import { IoMan, IoWoman } from "react-icons/io5";
+import Footer from '../components/Footer';
 
 function Houses() {
     return (
@@ -26,6 +27,8 @@ function Houses() {
           </div>
         </Link>
         </div>
+
+        <Footer/>
         </div>
     )
 }

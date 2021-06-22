@@ -43,3 +43,15 @@
     font-size: 2.0em;
     margin: 20px 0;
 }
+
+.center{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: 250px;
+}
