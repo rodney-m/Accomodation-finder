@@ -12,9 +12,10 @@ router.route('/add').post((req, res) => {
     const fname = req.body.fname;
     const lname = req.body.lname;
     const year = req.body.year;
-    const hostel = req.body.hostel;
+    const hostel = Number(req.body.hostel);
     const room_no = Number(req.body.room_no);
     const department = req.body.department;
+    const status = req.body.status;
 
     const newApplication = new Application({
         reg_no,
@@ -23,7 +24,8 @@ router.route('/add').post((req, res) => {
         year,
         hostel,
         room_no,
-        department
+        department,
+        status
     });
 
     newApplication.save()

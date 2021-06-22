@@ -12,6 +12,7 @@ app.use(express.json());
 
 const uri = process.env.DB_URI;
 mongoose.connect(uri, {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
 });
@@ -22,6 +23,9 @@ connection.once('open', () => {
 
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
+
+const applicationsRouter = require('./routes/applications');
+app.use('/applications', applicationsRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
