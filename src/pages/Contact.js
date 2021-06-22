@@ -1,5 +1,6 @@
 import React from "react";
 import "./Contact.css";
+import Footer from "../components/Footer";
 
 function contact() {
   return (
@@ -50,6 +51,7 @@ function contact() {
           </button>
         </fieldset>
       </form>
+      <Footer/>
     </div>
   );
 }

@@ -35,6 +35,7 @@ function App() {
           <Route exact path="/singleRoom" component={SingleRoom} />
           <Route exact path="/apply" component={Apply} />
           <Route exact path="/apply/oncampus" component={ApplyOncampus} />
+          <Route exact path="/hostels" component={Hostels} />
           <Route exact path="/apply/oncampus/view" component={ViewHostel} />
           <Route  path="/dashboard" component={Dashboard} />
           
