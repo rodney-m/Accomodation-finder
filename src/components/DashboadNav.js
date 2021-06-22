@@ -14,7 +14,9 @@ function DashboadNav() {
       </div>
       <div className="right">
         <IconButton>
+          <Link to="/"> 
           <h3 className="logout-btn">Logout</h3>
+          </Link>
         </IconButton>
         <p className="user">Rodney Mupanduki</p>
         <AccountCircleIcon />
