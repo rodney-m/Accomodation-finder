@@ -1,10 +1,11 @@
 import React from 'react'
 import './Footer.css';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function Footer() {
     return (
         <div className="footer">
-            <p> Made by Group 1 CS</p>
+            <p> Made with <FavoriteIcon/> by Group 1 CS</p>
         </div>
     )
 }
