@@ -8,22 +8,22 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const regNumber = req.body.regNumber;
-    const firstname = req.body.firstname;
-    const lastname = req.body.lastname;
+    const reg_no = req.body.reg_no;
+    const fname = req.body.fname;
+    const lname = req.body.lname;
     const year = req.body.year;
-    const roomNumber = Number(req.body.roomNumber);
+    const hostel = req.body.hostel;
+    const room_no = Number(req.body.room_no);
     const department = req.body.department;
-    const address = req.body.address;
 
     const newApplication = new Application({
-        regNumber,
-        firstname,
-        lastname,
+        reg_no,
+        fname,
+        lname,
         year,
-        roomNumber,
-        department,
-        address
+        hostel,
+        room_no,
+        department
     });
 
     newApplication.save()
