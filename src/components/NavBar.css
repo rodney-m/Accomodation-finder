@@ -1,5 +1,5 @@
 .NavBar{
-    background-color: #f9f9f9;
+    background-color: #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +7,9 @@
     box-shadow: 0 4px 2px -2px #dbdbdb;
     height: 10vh;
     padding: 5px;
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
 .NavBar .headerLogo{
