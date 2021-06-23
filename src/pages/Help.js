@@ -6,13 +6,16 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Footer from '../components/Footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '50%',
     margin: 'auto',
     marginTop: '20px',
-    borderRadius: '5px solid #0991CE',
+    borderRadius: '5px',
+    borderColor: 'red',
+
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -24,6 +27,7 @@ export default function SimpleAccordion() {
   const classes = useStyles();
 
   return (
+    <>
     <div className={classes.root}>
       <Accordion>
         <AccordionSummary
@@ -142,5 +146,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
     </div>
+    <Footer/>
+    </>
   );
 }
