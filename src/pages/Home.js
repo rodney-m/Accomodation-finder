@@ -19,7 +19,10 @@ function Home() {
                 <h1>Find your next home</h1>
                 <p>Your student housing search ends here</p>
                 <div  className="ctas">
-                        <span onClick={loginWithRedirect}>LogIn / SignUp</span>
+                    <Link to="/apply">
+                      <span onClick={loginWithRedirect}>LogIn / SignUp</span>
+
+                    </Link>
                 </div>  
                 <h3> User is {isAuthenticated ? "Logged in" : "Not logged in"}</h3>      
                 {isAuthenticated && (
