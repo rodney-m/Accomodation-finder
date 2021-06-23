@@ -40,9 +40,6 @@ function Home() {
             
                 <div className="services">
                       <div className="service">
-                        <div className="logo">
-
-                        </div>
                         <div className="text">
                             <HomeIcon color="primary" style={{ fontSize: 40 }}/>
                             <h3>Right Place. Right Price</h3>
@@ -50,9 +47,6 @@ function Home() {
                         </div>
                     </div>
                     <div className="service">
-                        <div className="logo">
-
-                        </div>
                         <div className="text">
                             <ContactSupportIcon color="primary" style={{ fontSize: 40 }}/>
                             <h3>End-to-End Support</h3>
@@ -62,9 +56,6 @@ function Home() {
                         </div>
                     </div>
                     <div className="service">
-                        <div className="logo">
-
-                        </div>
                         <div className="text">
                             <RateReviewIcon color="primary" style={{ fontSize: 40 }}/>
                             <h3> Our properties have reviews and ratings</h3>
@@ -77,7 +68,7 @@ function Home() {
             </div>
 
 
-            <div className="center-2">
+            <div className="center">
                 <h2>Reviews</h2>
                 <p>Take a peek at the reviews.</p>
             </div>

@@ -1,10 +1,10 @@
 .showcase{
-    height: 90vh;
-    background: linear-gradient(to right, rgba(23, 64, 153, 0.705), rgba(0, 255, 242, 0.74)),
-    url('../images/showcase.jpg');
+    min-height: 90vh;
+    background: linear-gradient(to right, rgba(23, 64, 153, 0.6), rgba(0, 255, 242, 0.6)),
+    url('../images/showcase1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     color: #fefefe;
     display: flex;
     flex-direction: column;
@@ -26,14 +26,17 @@
 
 .showcase .ctas span{
     background-color: #fff;
-    border: 3px solid black;
     border-radius: 3px;
     color: black;
     display: inline-block;
-    padding: 10px;
+    padding: 10px 15px;
     margin: 5px;
     width: 170px;
     text-transform: uppercase;
+}
+
+.showcase .ctas span:hover{
+    transform: scale(1.05);
 }
 
 .Home .bottom{
@@ -47,22 +50,27 @@
 }
 
 .center{
-    background-color: gray;
+    background: linear-gradient(to right, rgb(23, 64, 153), rgb(0, 255, 242));
+    color: white;
     text-align: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding: 50px;
 }
-.center-2{
-    background-color: gray;
-    text-align: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-}
+
 
 .services{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    height: 200px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    min-height: 200px;
+    gap: 16px;
+}
+
+.service .text h3 {
+    margin: 10px;
+}
+.service .text .MuiSvgIcon-root{
+    color: rgb(68, 87, 128)!important;
+    margin: 16px;
 }
 .reviews{
     display: grid;
