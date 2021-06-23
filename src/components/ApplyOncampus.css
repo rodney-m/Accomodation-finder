@@ -6,7 +6,9 @@
   justify-content: center;
   padding: 30px;
 }
-
+.relative{
+  position: relative;
+}
 .ApplyOncampus a {
     text-decoration: none;
     color: #333;

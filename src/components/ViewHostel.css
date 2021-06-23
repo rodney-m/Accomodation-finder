@@ -1,0 +1,29 @@
+.ViewHostel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.952);
+    color: #fff;
+}
+
+.ViewHostel .amenity{
+    background-color: cornflowerblue;
+    padding: 10px 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.ViewHostel .viewHostelBody{
+    padding: 30px;
+}
+
+.ViewHostel .viewHostelBody .btn{
+    background-color: cornflowerblue;
+    padding: 16px 25px;
+    display: inline-block;
+    margin: 20px 0;
+    color: white;
+}
