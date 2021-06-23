@@ -26,6 +26,8 @@
 
 .showcase .ctas span{
     background-color: #fff;
+    border: 3px solid black;
+    border-radius: 3px;
     color: black;
     display: inline-block;
     padding: 10px;
@@ -45,13 +47,30 @@
 }
 
 .center{
+    background-color: gray;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.center-2{
+    background-color: gray;
+    text-align: center;
+    padding-bottom: 30px;
     padding-top: 30px;
 }
 
 .services{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    height: 200px;
+}
+.reviews{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     height: 250px;
+}
+
+.review{
+    text-align: center;
+    padding-top: 30px;
 }
