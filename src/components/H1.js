@@ -1,45 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import {IconButton} from "@material-ui/core";
 import Modal from "./Modal";
+import axios from 'axios';
 
 function H1() {
+
   const [currentIndex, setCurrentIndex] = useState(null);
-  const h1 = [
-    {
-      reg_no: "H190197F",
-      fname: "Rodney Anesu",
-      lname: "Mupanduki",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H190415Z",
-      fname: "Lionnel",
-      lname: "Tsuro",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H190232Q",
-      fname: "Keith Panpan",
-      lname: "Charedzera",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-    {
-      reg_no: "H190086F",
-      fname: "Tinotenda",
-      lname: "Mukwazhe",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-  ];
+  const h1 = [];
+
+  axios.get('http://localhost:5000/applications/')
+  .then(response => {
+       h1 = response.data 
+  })
+  .catch(err => {
+      console.log(err);
+  })
+
   return (
     <div className="Hostel">
         <h1>Hostel 1</h1>
