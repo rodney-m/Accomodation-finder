@@ -8,16 +8,19 @@ import axios from 'axios';
 function H1() {
 
   const [currentIndex, setCurrentIndex] = useState(null);
-  const h1 = [];
+  const [h1List, setH1List] = useState([]);
 
-  axios.get('http://localhost:5000/applications/')
+  useEffect(() => {
+    axios.get('http://localhost:5000/applications/')
   .then(response => {
-       h1 = response.data 
+       setH1List(response.data) 
   })
   .catch(err => {
       console.log(err);
   })
 
+  })
+  
   return (
     <div className="Hostel">
         <h1>Hostel 1</h1>
@@ -35,7 +38,7 @@ function H1() {
           </tr>
         </thead>
         <tbody>
-          {h1.map((h1, index) => {
+          {h1List.map((h1, index) => {
             return (
               <tr>
                 <td>{h1.reg_no}</td>
@@ -55,7 +58,7 @@ function H1() {
         </tbody>
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
-      {currentIndex !== null && <Modal data={h1[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+      {currentIndex !== null && <Modal data={h1List[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
     </div>
   );
 }
