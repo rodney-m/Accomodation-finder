@@ -18,6 +18,33 @@
 }
 .ViewHostel .viewHostelBody{
     padding: 30px;
+    display: flex;
+    margin-top: 30px;
+}
+.ViewHostel .viewHostelBody .images{
+    padding: 30px;
+    background-color: #fff;
+    width: 45vw;
+    flex: 45vw;
+    color : #333333;
+}
+
+.ViewHostel .viewHostelBody .images .hostelPictures {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-gap: 10px; */
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ViewHostel .viewHostelBody .images .hostelPictures img{
+    object-fit: contain;
+    width: 300px;
+}
+.ViewHostel .viewHostelBody .text{
+    width: 45vw;
 }
 
 .ViewHostel .viewHostelBody .btn{

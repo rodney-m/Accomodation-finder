@@ -5,6 +5,8 @@ import { IconButton } from "@material-ui/core";
 import { GiCctvCamera } from "react-icons/gi";
 import { FaWifi } from "react-icons/fa";
 
+import Picture from "../images/hostel-pic1.jpg";
+
 function ViewHostel({ hostel, setCurrentIndex }) {
   return (
     <div className="ViewHostel">
@@ -36,7 +38,15 @@ function ViewHostel({ hostel, setCurrentIndex }) {
           </IconButton>
         </div>
 
-        <div className="images"></div>
+        <div className="images">
+        
+            <div className="hostelPictures">
+                <img src={Picture} alt="hostel pictures" />
+                <img src={Picture} alt="hostel pictures" />
+                <img src={Picture} alt="hostel pictures" />
+                <img src={Picture} alt="hostel pictures" />
+            </div>
+        </div>
       </div>
     </div>
   );
