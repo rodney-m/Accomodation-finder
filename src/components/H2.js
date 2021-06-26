@@ -1,47 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import {IconButton} from "@material-ui/core";
 import Modal from "./Modal";
-
+import axios from 'axios';
 
 function H2() {
   const [currentIndex ,setCurrentIndex] = useState(null);
+  const [h2List, setH2List] = useState([]);
 
-  const H2 = [
-    {
-      reg_no: "H180197F",
-      fname: "Mike ",
-      lname: "Black",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H180415Z",
-      fname: "John",
-      lname: "Doe",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H180232Q",
-      fname: "Jackie",
-      lname: "Smith",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-    {
-      reg_no: "H190086F",
-      fname: "Drake",
-      lname: "Future",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-  ];
+  useEffect(() => {
+    axios.get('http://localhost:5000/applications/')
+  .then(response => {
+       setH2List(response.data.filter(data => data.hostel === 2))
+  })
+  .catch(err => {
+      console.log(err);
+  })
+
+  })
   return (
     <div className="Hostel">
         <h1>Hostel 2</h1>
@@ -59,15 +36,15 @@ function H2() {
           </tr>
         </thead>
         <tbody>
-          {H2.map((H2, index) => {
+          {h2List.map((h2, index) => {
             return (
               <tr>
-                <td>{H2.reg_no}</td>
-                <td>{H2.fname}</td>
-                <td>{H2.lname}</td>
-                <td>{H2.year}</td>
-                <td>{H2.room_no}</td>
-                <td>{H2.department}</td>
+                <td>{h2.reg_no}</td>
+                <td>{h2.fname}</td>
+                <td>{h2.lname}</td>
+                <td>{h2.year}</td>
+                <td>{h2.room_no}</td>
+                <td>{h2.department}</td>
                 <td>
                   <IconButton>
                     <InfoIcon className="info" onClick={() => setCurrentIndex(index)}/>
@@ -79,7 +56,7 @@ function H2() {
         </tbody>
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
-      {currentIndex !== null && <Modal data={H2[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+      {currentIndex !== null && <Modal data={h2List[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
     </div>
   );
 }

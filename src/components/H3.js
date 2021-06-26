@@ -1,47 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import {IconButton} from "@material-ui/core";
-import Modal from "./Modal"
-
+import Modal from "./Modal";
+import axios from 'axios';
 
 function H3() {
   const [currentIndex, setCurrentIndex] = useState(null);
+  const [h3List, setH3List] = useState([]);
 
-  const H3 = [
-    {
-      reg_no: "H170197F",
-      fname: "Jane ",
-      lname: "Doe",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H180415Z",
-      fname: "Donald",
-      lname: "Trump",
-      year: "2.2",
-      room_no: 110,
-      department: "ICS",
-    },
-    {
-      reg_no: "H180232Q",
-      fname: "Sky",
-      lname: "Blue",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-    {
-      reg_no: "H190086F",
-      fname: "Drake",
-      lname: "Future",
-      year: "2.2",
-      room_no: 109,
-      department: "ICS",
-    },
-  ];
+  useEffect(() => {
+    axios.get('http://localhost:5000/applications/')
+  .then(response => {
+       setH3List(response.data.filter(data => data.hostel === 3))
+  })
+  .catch(err => {
+      console.log(err);
+  })
+
+  })
   return (
     <div className="Hostel">
         <h1>Hostel 3</h1>
@@ -59,15 +36,15 @@ function H3() {
           </tr>
         </thead>
         <tbody>
-          {H3.map((H3, index) => {
+          {h3List.map((h3, index) => {
             return (
               <tr>
-                <td>{H3.reg_no}</td>
-                <td>{H3.fname}</td>
-                <td>{H3.lname}</td>
-                <td>{H3.year}</td>
-                <td>{H3.room_no}</td>
-                <td>{H3.department}</td>
+                <td>{h3.reg_no}</td>
+                <td>{h3.fname}</td>
+                <td>{h3.lname}</td>
+                <td>{h3.year}</td>
+                <td>{h3.room_no}</td>
+                <td>{h3.department}</td>
                 <td>
                   <IconButton>
                     <InfoIcon className="info"  onClick={() => setCurrentIndex(index)} />
@@ -79,7 +56,7 @@ function H3() {
         </tbody>
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
-      {currentIndex !== null && <Modal data={H3[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+      {currentIndex !== null && <Modal data={h3List[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
     </div>
   );
 }
