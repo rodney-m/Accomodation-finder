@@ -13,13 +13,15 @@ function H1() {
   useEffect(() => {
     axios.get('http://localhost:5000/applications/')
   .then(response => {
-       setH1List(response.data) 
+       setH1List(response.data.filter(data => data.hostel === 1))
   })
   .catch(err => {
       console.log(err);
   })
 
   })
+  
+  
   
   return (
     <div className="Hostel">
