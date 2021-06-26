@@ -1,34 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from "react";
 import PieChart from './PieChart'
 import "./Overview.css"
+import axios from 'axios';
 
 function Overview() {
-    const data= [
-        {
-            hostel : "h1",
-            occupied: 12,
-            unoccupied: 100,
-            reserved : 15
-        },
-        {
-            hostel : "h2",
-            occupied: 72,
-            unoccupied: 30,
-            reserved : 15
-        },
-        {
-            hostel : "h3",
-            occupied: 130,
-            unoccupied: 0,
-            reserved : 15
-        },
-        {
-            hostel : "h4",
-            occupied: 45,
-            unoccupied: 100,
-            reserved : 3
-        },
-    ]
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+    axios.get('http://localhost:5000/hostels/')
+    .then(response => response.data)
+
+  })
     return (
         <div className="Overview">
             <PieChart data={data[0]} />
@@ -39,4 +22,4 @@ function Overview() {
     )
 }
 
-export default Overview
+export default Overview;    

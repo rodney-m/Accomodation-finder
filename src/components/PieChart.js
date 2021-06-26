@@ -6,7 +6,7 @@ class PieChart extends Component {
     super(props);
 
     this.state = {
-      series: [props.data.occupied, props.data.unoccupied, props.data.reserved],
+      series: [props.data.beds_occupied, props.data.unoccupied, props.data.reserved],
       options: {
         chart: {
           width: 380,
@@ -15,7 +15,7 @@ class PieChart extends Component {
         labels: ["Occupied", "Unoccuppied", "Reserved"],
         
         title: {
-          text: props.data.hostel,
+          text: props.data.name,
           align: "left",
           margin: 20,
           offsetY: 20,
