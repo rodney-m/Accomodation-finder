@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const hostelSchema = new Schema({
     name: { type: String },
-    beds_available: { type: Number},
+    total_beds: { type: Number},
     beds_reserved: { type: Number},
     beds_occupied: { type: Number}
 });
