@@ -9,7 +9,9 @@ function Overview() {
 
     useEffect(() => {
     axios.get('http://localhost:5000/hostels/')
-    .then(response => response.data)
+    .then(response => {
+        setData(response.data)
+    })
 
   })
     return (
@@ -18,6 +20,7 @@ function Overview() {
             <PieChart data={data[1]} />
             <PieChart data={data[2]} />
             <PieChart data={data[3]} />
+            
         </div>
     )
 }

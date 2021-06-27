@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Chart from "react-apexcharts";
 
 class PieChart extends Component {
+
   constructor(props) {
     super(props);
 
-    this.state = {
-      series: [props.data.beds_occupied, props.data.unoccupied, props.data.reserved],
+   this.state = {
+      series: [props.data.beds_occupied, 12, props.data.beds_reserved],
       options: {
         chart: {
           width: 380,
@@ -37,9 +38,11 @@ class PieChart extends Component {
           },
         ],
       },
-    };
-  }
+    
+     };
 
+  }
+  
   render() {
     return (
       <div id="chart">
@@ -48,7 +51,7 @@ class PieChart extends Component {
           series={this.state.series}
           type="pie"
           width={380}
-        />
+        /> 
       </div>
     );
   }
