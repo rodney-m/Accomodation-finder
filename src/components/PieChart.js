@@ -5,7 +5,7 @@ function PieChart({ data: newData }) {
   
   const [data, setData] = useState(newData);
   const options = {
-    series: [data.occupiedBeds, 12, data.reservedBeds],
+    series: [data.occupiedBeds, data.totalBeds - data.occupiedBeds - data.reservedBeds, data.reservedBeds],
     options: {
       chart: {
         width: 380,
