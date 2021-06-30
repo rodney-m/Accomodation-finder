@@ -10,9 +10,9 @@ function Requests() {
     const [requests, setRequests] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/requests/')
+        axios.get('http://localhost:5000/offcampus/')
             .then(response => {
-                setRequests(response.data)
+                setRequests(response.data.filter(data => data.approved === false))
             })
             .catch(err => {
                 console.log(err);
