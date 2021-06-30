@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PieChart from './PieChart'
 import "./Overview.css"
 import axios from 'axios';
@@ -8,12 +8,13 @@ function Overview() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-    axios.get('http://localhost:5000/hostels/')
-    .then(response => {
-        setData(response.data)
-    })
+        axios.get('http://localhost:5000/hostels/')
+            .then(response => {
+                setData(response.data)
+            })
 
-  })
+    })
+   
     return (
         <div className="Overview">
             {data.length > 0 &&
@@ -28,4 +29,4 @@ function Overview() {
     )
 }
 
-export default Overview;    
+export default Overview;
