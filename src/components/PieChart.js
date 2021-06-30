@@ -7,7 +7,7 @@ class PieChart extends Component {
         super(props);
 
         this.state = {
-            series: [props.data.beds_occupied, 12, props.data.beds_reserved],
+            series: [props.data.beds_occupied, 12, 8],
             options: {
                 chart: {
                     width: 380,
@@ -42,15 +42,14 @@ class PieChart extends Component {
     }
 
     render() {
-        return ( <
-            div id = "chart" >
+        return ( < div id = "chart" >
             <
             Chart options = { this.state.options }
             series = { this.state.series }
             type = "pie"
             width = { 380 }
-            />  <
-            /div>
+            /> < /
+            div >
         );
     }
 }

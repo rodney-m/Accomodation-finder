@@ -20,30 +20,60 @@ import ViewHostel from './components/ViewHostel';
 
 function App() {
 
-  return (
-    <div className="App">
-       <Router>
-        <NavBar />
-        
-        <Switch>
-          <Route  path="/dashboard" component={Dashboard} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/apply" component={Apply} />
-          <Route exact path="/help" component={Help} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/houses" component={Houses} />
-          <Route exact path="/singleRoom" component={SingleRoom} />
-          <Route exact path="/apply" component={Apply} />
-          <Route exact path="/apply/oncampus" component={ApplyOncampus} />
-          <Route exact path="/hostels" component={Hostels} />
-          <Route exact path="/apply/oncampus/view" component={ViewHostel} />
-          <Route  path="/dashboard" component={Dashboard} />
-          
-          <Route component={Error} />
-        </Switch>
-      </Router>
-    </div>
-  );
+    return ( <
+        div className = "App" >
+        <
+        Router >
+        <
+        NavBar / >
+
+        <
+        Switch >
+        <
+        Route path = "/dashboard"
+        component = { Dashboard }
+        /> <
+        Route exact path = "/"
+        component = { Home }
+        /> <
+        Route exact path = "/apply"
+        component = { Apply }
+        /> <
+        Route exact path = "/help"
+        component = { Help }
+        /> <
+        Route exact path = "/contact"
+        component = { Contact }
+        /> <
+        Route exact path = "/houses"
+        component = { Houses }
+        /> <
+        Route exact path = "/singleRoom"
+        component = { SingleRoom }
+        /> <
+        Route exact path = "/apply"
+        component = { Apply }
+        /> <
+        Route exact path = "/apply/oncampus"
+        component = { ApplyOncampus }
+        /> <
+        Route exact path = "/hostels"
+        component = { Hostels }
+        /> <
+        Route exact path = "/apply/oncampus/view"
+        component = { ViewHostel }
+        /> <
+        Route path = "/dashboard"
+        component = { Dashboard }
+        />
+
+        <
+        Route component = { Error }
+        /> <
+        /Switch> <
+        /Router> <
+        /div>
+    );
 }
 
 export default App;
