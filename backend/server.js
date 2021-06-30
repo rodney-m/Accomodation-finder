@@ -30,6 +30,9 @@ app.use('/applications', applicationsRouter);
 const hostelsRouter = require('./routes/hostels');
 app.use('/hostels', hostelsRouter);
 
+const offCampusRouter = require('./routes/offcampus');
+app.use('/offcampus', offCampusRouter);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
