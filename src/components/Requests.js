@@ -44,7 +44,7 @@ function Requests() {
                 return ( <
                     tr >
                     <
-                    td > { request.name } < /td> <
+                    td > { request.owner } < /td> <
                     td > { request.address } < /td> <
                     td > { request.gender } < /td> <
                     td > { request.beds } < /td> <
