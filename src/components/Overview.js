@@ -14,23 +14,6 @@ function Overview() {
             })
 
     })
-<<<<<<< HEAD
-
-    return ( <
-        div className = "Overview" >
-        <
-        PieChart data = { data[0] }
-        /> <
-        PieChart data = { data[1] }
-        /> <
-        PieChart data = { data[2] }
-        /> <
-        PieChart data = { data[3] }
-        />
-
-        <
-        /div>
-=======
    
     return (
         <div className="Overview">
@@ -43,7 +26,6 @@ function Overview() {
             </>
             }      
         </div>
->>>>>>> 5e9dd081c6dbfac8287fd9b060e73b9ea9c6e602
     )
 }
 
