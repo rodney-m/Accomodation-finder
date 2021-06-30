@@ -16,11 +16,14 @@ function Overview() {
   })
     return (
         <div className="Overview">
+            {data.length > 0 &&
+            <>
             <PieChart data={data[0]} />
             <PieChart data={data[1]} />
             <PieChart data={data[2]} />
             <PieChart data={data[3]} />
-            
+            </>
+            }      
         </div>
     )
 }
