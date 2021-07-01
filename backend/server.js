@@ -33,6 +33,10 @@ app.use('/hostels', hostelsRouter);
 const offCampusRouter = require('./routes/offcampus');
 app.use('/offcampus', offCampusRouter);
 
+// const imagesRouter = require("./routes/web");
+// app.use(express.urlencoded({ extended: true }));
+// imagesRouter(app);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
