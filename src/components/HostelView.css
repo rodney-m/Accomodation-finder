@@ -1,0 +1,48 @@
+.HostelView {
+    min-height: 90vh;
+    display: flex;
+}
+.HostelView .HostelViewText{
+    width: 40vw;
+    padding: 40px;
+}
+.HostelView .HostelViewImages{
+    width: 60vw;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+.HostelView .HostelViewImages .imagesGrid{
+    height: 500px;
+    width: 600px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.HostelView .HostelViewImages .imagesGrid .mainImage{
+    height: 70%;
+}
+.HostelView .HostelViewImages .imagesGrid .bottomImages{
+    height: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.HostelView .HostelViewImages .imagesGrid .mainImage img{
+    height: 100%;
+    width: 100%;
+}
+.HostelView .HostelViewImages .imagesGrid .bottomImages img{
+    height: 100%;
+    margin: 1px;
+}
+
+.HostelView .btn{
+    background-color: cornflowerblue;
+    color: white;
+    padding: 15px 30px;
+    border: 0;
+    font-weight: bold;
+    display: inline;
+}

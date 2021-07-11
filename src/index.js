@@ -3,16 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {Auth0Provider} from '@auth0/auth0-react'
+import allReducers from "./reducers"
+import {createStore} from "redux"
+import {Provider} from "react-redux"
+
+const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-h14-cvnr.us.auth0.com"
-      clientId="7UDcnZrjRq67CACULOy03RKGrvAEEsaL"
-      redirectUri={window.location.origin}
-    >
-        <App />
-    </Auth0Provider>
+    <Provider store={store} >
+
+    
+        <Auth0Provider
+          domain="dev-h14-cvnr.us.auth0.com"
+          clientId="7UDcnZrjRq67CACULOy03RKGrvAEEsaL"
+          redirectUri={window.location.origin}
+        >
+            <App />
+        </Auth0Provider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

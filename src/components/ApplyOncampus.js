@@ -7,53 +7,23 @@ import ViewHostel from "./ViewHostel";
 import WifiIcon from '@material-ui/icons/Wifi';
 import VideocamIcon from '@material-ui/icons/Videocam';
 
+import {useSelector} from "react-redux"
+
 function ApplyOnCampus() {
-  const [currentIndex, setCurrentIndex] = useState(null);
+  const [hostelCurrentIndex, setHostelCurrentIndex] = useState(null);
 
-  
+  const hostels = useSelector(state => state.hostels)
 
-  const Hostels = [
-    {
-      name: "Hostel 1",
-      gender: <ImManWoman/>,
-      prize: 8000,
-      amenities: [
-        {
-          name: "wifi", 
-          icon : <WifiIcon />,
-        }, 
-        {
-          name: "cctv",
-          icon : <VideocamIcon />,
-        }
-      ]
-    
-    },
-    {
-      name: "Hostel 2",
-      gender: <ImMan />,
-      prize: 6000,
-    },
-    {
-      name: "Hostel 3",
-      gender: <ImMan />,
-      prize: 6000,
-    },
-    {
-      name: "Hostel 4",
-      gender: <ImWoman/>,
-      prize: 6000,
-    },
-  ];
+
   return (
     < div className="relative">
     <div className="ApplyOncampus">
-      {Hostels.map((hostel, index) => {
+      {hostels.map((hostel, index) => {
         return (
-          <Link to="/apply/oncampus/">
+          <Link to={`/apply/oncampus/${index+1}`}>
             <div
               className="hostelThumbnail"
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => setHostelCurrentIndex(index)}
             >
               <div className="image">
                 <img src={HostelsImg} alt={hostel.name} />
@@ -75,7 +45,7 @@ function ApplyOnCampus() {
 
      
     </div>
-    {currentIndex !== null ? <ViewHostel hostel={Hostels[currentIndex]} setCurrentIndex={setCurrentIndex}/> : ""}
+    {hostelCurrentIndex !== null ? <ViewHostel hostel={hostels[hostelCurrentIndex]} setHostelCurrentIndex={setHostelCurrentIndex}/> : ""}
 
     </div>
     

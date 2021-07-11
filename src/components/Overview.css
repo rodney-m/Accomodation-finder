@@ -1,5 +1,9 @@
-.Overview{
+.Overview .pieCharts{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    width: 100%;
+    flex-grow: 1;
+    min-height: 100vh;
+    flex: 1;
 }

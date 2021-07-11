@@ -7,11 +7,11 @@ import { FaWifi } from "react-icons/fa";
 
 import Picture from "../images/hostel-pic1.jpg";
 
-function ViewHostel({ hostel, setCurrentIndex }) {
+function ViewHostel({ hostel, setHostelCurrentIndex }) {
   return (
     <div className="ViewHostel">
       <span className="close">
-        <IconButton onClick={() => setCurrentIndex(null)}>
+        <IconButton onClick={() => setHostelCurrentIndex(null)}>
           <CloseIcon className="closeBtn" />
         </IconButton>
       </span>
