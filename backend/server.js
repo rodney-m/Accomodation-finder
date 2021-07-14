@@ -22,7 +22,7 @@ connection.once('open', () => {
 });
 
 const usersRouter = require('./routes/users');
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 
 const applicationsRouter = require('./routes/applications');
 app.use('/applications', applicationsRouter);

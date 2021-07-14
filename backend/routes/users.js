@@ -10,6 +10,7 @@ router.route('/signup').post((req, res, next) => {
             });
         } else {
             const user = new User({
+                reg_number: req.body.reg_number,
                 email: req.body.email,
                 password: hash
             });
