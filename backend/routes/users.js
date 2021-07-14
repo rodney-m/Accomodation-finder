@@ -43,7 +43,19 @@ router.route('/signup').post((req, res, next) => {
 
 })
 
-// router.route('/add').post((req, res) => {
+router.route('/login').post((res, req, next) => {
+        User.find({ email: req.body.email })
+            .exec()
+            .then(user => {
+                if (user.length < 1) {
+                    return res.status(401).json({
+                        message: "Auth failed"
+                    })
+                }
+            })
+            .catch();
+    })
+    // router.route('/add').post((req, res) => {
 
 //     const given_name = req.body.given_name;
 //     const family_name = req.body.family_name;
