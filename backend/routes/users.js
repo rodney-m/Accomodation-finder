@@ -3,32 +3,44 @@ const bcrypt = require('bcrypt');
 let User = require('../models/userModel');
 
 router.route('/signup').post((req, res, next) => {
-    bcrypt.hash(req.body.password, 10, (err, hash) => {
-        if (err) {
-            return res.status(500).json({
-                error: err
-            });
-        } else {
-            const user = new User({
-                reg_number: req.body.reg_number,
-                email: req.body.email,
-                password: hash
-            });
-            user
-                .save()
-                .then(result => {
-                    res.status(201).json({
-                        message: 'User created.'
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
-                    res.status(500).json({
-                        error: err
-                    })
+    User.find({ email: req.body.email })
+        .exec()
+        .then(user => {
+            if (user) {
+                return res.status(409).json({
+                    message: 'user exists'
                 });
-        }
-    });
+            } else {
+                bcrypt.hash(req.body.password, 10, (err, hash) => {
+                    if (err) {
+                        return res.status(500).json({
+                            error: err
+                        });
+                    } else {
+                        const user = new User({
+                            reg_number: req.body.reg_number,
+                            email: req.body.email,
+                            password: hash
+                        });
+                        user
+                            .save()
+                            .then(result => {
+                                res.status(201).json({
+                                    message: 'User created.'
+                                });
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                res.status(500).json({
+                                    error: err
+                                })
+                            });
+                    }
+                });
+            }
+        })
+        .catch();
+
 })
 
 // router.route('/add').post((req, res) => {
