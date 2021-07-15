@@ -17,6 +17,7 @@ import Apply from "./components/Apply";
 import ApplyOncampus from "./components/ApplyOncampus";
 // import ViewHostel from "./components/ViewHostel";
 import HostelView from "./components/HostelView";
+import ApplyOffcampus from "./components/ApplyOffcampus";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           <Route exact path="/apply" component={Apply} />
           <Route exact path="/apply/oncampus" component={ApplyOncampus} />
           <Route exact path="/apply/oncampus/:hostelNumber" component={HostelView} />
-          {/* <Route exact path="/apply/oncampus/view" component={ViewHostel} /> */}
+          <Route exact path="/apply/offcampus" component={ApplyOffcampus} />
           <Route path="/dashboard" component={Dashboard} />
           <Route component={Error} />
         </Switch>
