@@ -1,0 +1,9 @@
+.ApplyOffcampus{
+    background-color: #F5F5F5;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+

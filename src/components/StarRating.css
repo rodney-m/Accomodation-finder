@@ -1,0 +1,8 @@
+.StarRating input[type="radio"]{
+    display: none;
+}
+
+.StarRating .star{
+    cursor: pointer;
+    transition: color 200ms;
+}

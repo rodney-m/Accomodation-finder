@@ -1,0 +1,45 @@
+.ApplyOffMain{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.ApplyOffMain .houseThumb{
+    display: flex;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.ApplyOffMain .houseThumb .image{
+    height: 220px;
+    width: 300px;
+    background-color: #ddd;
+}
+.ApplyOffMain .houseThumb .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.ApplyOffMain .houseThumb .text{
+    flex: 1;
+    padding: 1rem;
+}
+
+.properties{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+.ApplyOffMain .houseThumb .properties .icon{
+    background-color: #ddd;
+    padding: .8rem;
+    display: flex;
+    margin: 0.5rem;
+    border-radius: .5rem;
+}
+
+.ApplyOffMain .houseThumb .price{
+    font-size: 2rem;
+}
