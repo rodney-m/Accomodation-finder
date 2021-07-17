@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import NavBar from "./components/NavBar";
 import LogIn from "./pages/Login";
-import LogIn2 from "./pages/Login2";
 import Help from "./pages/Help";
 import Contact from "./pages/Contact";
 import Houses from "./pages/Houses";
@@ -28,6 +27,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Home} />
           <Route exact path="/apply" component={Apply} />
+          <Route exact path="/login" component={LogIn} />
           <Route exact path="/help" component={Help} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/houses" component={Houses} />

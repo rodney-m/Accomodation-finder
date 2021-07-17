@@ -34,7 +34,7 @@ function Login() {
                     <div className="input-container">
                     <input type="text" placeholder="Registration No." />
                     <input type="password" placeholder="Password" />
-                    <Link to="/oncampus">
+                    <Link to="/apply">
                         <button>LOGIN</button>
                     </Link>
                     <a href="#" className="forgot-pass">
