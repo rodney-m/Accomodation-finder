@@ -3,11 +3,11 @@
     place-items: center;
     height: 90vh;
 
-    background: linear-gradient(to right, rgba(23, 64, 153, 0.705), rgba(0, 255, 242, 0.74)),
-    url('../images/showcase.jpg');
+    background: linear-gradient(to right, rgba(23, 64, 153, 0.6), rgba(0, 255, 242, 0.6)),
+    url('../images/showcase1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
 }
 
   .main-form-container {
