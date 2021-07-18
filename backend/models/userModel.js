@@ -7,8 +7,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
 
-    reg_number: String,
-    email: String,
+    reg_number: { type: String, unique: true },
+    email: { type: String, unique: true },
     password: String
 });
 
