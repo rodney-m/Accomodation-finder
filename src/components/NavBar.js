@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../images/hit.png";
 import "./NavBar.css";
 import { Link, useLocation } from "react-router-dom";
+import { LoginContext } from "../Helper/Context";
+import Button from "@material-ui/core/Button";
 
 function NavBar() {
+  const { loggedIn, setLoggedIn } = useContext(LoginContext);
+
+  const onLogout = () => {
+    setLoggedIn(false);
+  }
+
   let location = useLocation();
   if (!location.pathname.startsWith("/dashboard")) {
     return (
@@ -31,7 +39,12 @@ function NavBar() {
           <Link to="/Contact">
             <li>Contact</li>
           </Link>
+
+          <li>{loggedIn ? "Logged In" : "Not Logged In"} </li>
         </ul>
+        <Button onClick={onLogout} variant="contained" color="primary">
+          LogOut
+        </Button>
       </div>
     );
   } else {
