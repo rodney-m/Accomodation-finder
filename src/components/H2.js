@@ -1,28 +1,36 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
-import {IconButton} from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import Modal from "./Modal";
-import axios from 'axios';
+import axios from "axios";
+import PendingModal from "./PendingModal";
+
 
 function H2() {
-  const [currentIndex ,setCurrentIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
   const [h2List, setH2List] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/applications/')
-  .then(response => {
-       setH2List(response.data.filter(data => data.hostel === 2))
-  })
-  .catch(err => {
-      console.log(err);
-  })
+  const [viewPending, setViewPending] = useState(false);
+  
+  const onPending = () => {
+    setViewPending(true)
+  }
 
-  })
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/applications/")
+      .then((response) => {
+        setH2List(response.data.filter((data) => data.hostel === 2));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
   return (
     <div className="Hostel">
-        <h1>Hostel 2</h1>
-      <span className="pending-btn">Pending</span>
+      <h1>Hostel 2</h1>
+      <span className="pending-btn" onClick={onPending}>Pending</span>
       <table cellSpacing="0">
         <thead>
           <tr>
@@ -47,7 +55,10 @@ function H2() {
                 <td>{h2.department}</td>
                 <td>
                   <IconButton>
-                    <InfoIcon className="info" onClick={() => setCurrentIndex(index)}/>
+                    <InfoIcon
+                      className="info"
+                      onClick={() => setCurrentIndex(index)}
+                    />
                   </IconButton>
                 </td>
               </tr>
@@ -56,7 +67,11 @@ function H2() {
         </tbody>
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
-      {currentIndex !== null && <Modal data={h2List[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+      {currentIndex !== null && (
+        <Modal data={h2List[currentIndex]} setCurrentIndex={setCurrentIndex} />
+      )}
+
+      {viewPending ? <PendingModal setViewPending={setViewPending} /> : ""}
     </div>
   );
 }

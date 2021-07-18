@@ -3,6 +3,7 @@ import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import { IconButton } from "@material-ui/core";
 import Modal from "./Modal";
+import PendingModal from "./PendingModal";
 import axios from "axios";
 
 
@@ -21,9 +22,16 @@ function H1() {
       });
   });
 
+  const [viewPending, setViewPending] = useState(false);
+  
+  const onPending = () => {
+    setViewPending(true)
+  }
+
   return (
     <div className="Hostel">
-      <h1> Hostel 1 </h1> <span className="pending-btn"> Pending </span>
+      <h1> Hostel 1 </h1> 
+      <span onClick={onPending} className="pending-btn"> Pending </span>
       <table cellSpacing="0">
         <thead>
           <tr>
@@ -54,6 +62,8 @@ function H1() {
       {currentIndex !== null && (
         <Modal data={h1List[currentIndex]} setCurrentIndex={setCurrentIndex} />
       )}
+
+      {viewPending ? <PendingModal setViewPending={setViewPending} /> : ""}
     </div>
   );
 }

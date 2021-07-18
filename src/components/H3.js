@@ -4,10 +4,18 @@ import InfoIcon from "@material-ui/icons/Info";
 import {IconButton} from "@material-ui/core";
 import Modal from "./Modal";
 import axios from 'axios';
+import PendingModal from "./PendingModal";
+
 
 function H3() {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [h3List, setH3List] = useState([]);
+
+  const [viewPending, setViewPending] = useState(false);
+  
+  const onPending = () => {
+    setViewPending(true)
+  }
 
   useEffect(() => {
     axios.get('http://localhost:5000/applications/')
@@ -22,7 +30,7 @@ function H3() {
   return (
     <div className="Hostel">
         <h1>Hostel 3</h1>
-      <span className="pending-btn">Pending</span>
+      <span className="pending-btn" onClick={onPending}>Pending</span>
       <table cellSpacing="0">
         <thead>
           <tr>
@@ -57,6 +65,9 @@ function H3() {
       </table>
       {/* Check if there is any students to list and if any student is selected then show in modal */}
       {currentIndex !== null && <Modal data={h3List[currentIndex]} setCurrentIndex={setCurrentIndex}/>}
+
+      {viewPending ? <PendingModal setViewPending={setViewPending} /> : ""}
+
     </div>
   );
 }

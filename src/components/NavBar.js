@@ -28,8 +28,8 @@ function NavBar() {
             <li>Houses</li>
           </Link>
 
-          <Link to="/Hostels">
-            <li>Hostels</li>
+          <Link to="apply/offcampus">
+            <li>Offcampus</li>
           </Link>
 
           <Link to="/Help">
