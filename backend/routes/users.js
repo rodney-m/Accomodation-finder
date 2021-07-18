@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 let User = require('../models/userModel');
+const jwt = require('jsonwebtoken');
 
 router.route('/signup').post((req, res, next) => {
     User.find({ email: req.body.email })
@@ -56,8 +57,16 @@ router.route('/login').post((req, res, next) => {
                         });
                     }
                     if (result) {
+                        const token = jwt.sign({
+                                email: user[0].email,
+                                userId: user[0]._id
+                            },
+                            process.env.JWT_KEY, {
+                                expiresIn: "1h"
+                            });
                         return res.status(200).json({
-                            message: "auth successful"
+                            message: "auth successful",
+                            token: token
                         })
                     }
                 })
