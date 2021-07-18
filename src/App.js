@@ -1,3 +1,4 @@
+import React, {useState} from "react"
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -14,32 +15,43 @@ import DashboadNav from "./components/DashboadNav";
 import H1 from "./components/H1";
 import Apply from "./components/Apply";
 import ApplyOncampus from "./components/ApplyOncampus";
-// import ViewHostel from "./components/ViewHostel";
 import HostelView from "./components/HostelView";
 import ApplyOffcampus from "./components/ApplyOffcampus";
 
+import ProtectedRoute from "./pages/ProtectedRoutes";
+
+import { LoginContext } from "./Helper/Context";
+
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div className="App">
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path="/dashboard" component={Dashboard} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/apply" component={Apply} />
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/help" component={Help} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/houses" component={ApplyOffcampus} />
-          <Route exact path="/singleRoom" component={SingleRoom} />
-          <Route exact path="/apply" component={Apply} />
-          <Route exact path="/apply/oncampus" component={ApplyOncampus} />
-          <Route exact path="/apply/oncampus/:hostelNumber" component={HostelView} />
-          <Route exact path="/apply/offcampus" component={ApplyOffcampus} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route component={Error} />
-        </Switch>
-      </Router>
+      <LoginContext.Provider value={ {loggedIn, setLoggedIn} }>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/dashboard" component={Dashboard} />
+            <Route exact path="/" component={Home} />
+            <ProtectedRoute path="/apply" component={ApplyOffcampus} isLoggedIn={loggedIn}/>
+            <Route exact path="/apply" component={Apply} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/help" component={Help} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/houses" component={ApplyOffcampus} />
+            <Route exact path="/singleRoom" component={SingleRoom} />
+            <Route exact path="/apply" component={Apply} />
+            <Route exact path="/apply/oncampus" component={ApplyOncampus} />
+            <Route
+              exact
+              path="/apply/oncampus/:hostelNumber"
+              component={HostelView}
+            />
+            <Route exact path="/apply/offcampus" component={ApplyOffcampus} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route component={Error} />
+          </Switch>
+        </Router>
+      </LoginContext.Provider>
     </div>
   );
 }

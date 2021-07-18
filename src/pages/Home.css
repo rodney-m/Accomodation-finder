@@ -24,15 +24,11 @@
     margin: 10px 0;
 }
 
-.showcase .ctas span{
-    background-color: #fff;
-    border-radius: 3px;
-    color: black;
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 5px;
-    width: 170px;
-    text-transform: uppercase;
+.showcase a {
+    text-decoration: none;
+}
+.showcase button:hover{
+    transform: scale(1.1);
 }
 
 .showcase .ctas span:hover{
