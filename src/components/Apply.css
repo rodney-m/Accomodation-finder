@@ -1,6 +1,23 @@
 .Apply{
     min-height : 90vh;
+}
+
+.Apply .top-section{
     display: flex;
+    min-height: 60vh;
+}
+
+.Apply .bottom-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 30vh;    
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.704)),
+    url('../images/check-app-status.jpg');
+    background-size: cover;
+    background-position:  0 -150px;
+    color: white;
 }
 
 .Apply .left{
@@ -27,7 +44,7 @@
     color: #fff;
 }
 
-.Apply .left a, .Apply .right a{
+.Apply a{
     text-decoration: none;
 }
 
@@ -35,6 +52,6 @@
     background-color: cornflowerblue;
     color: white;
     padding: 16px 35px;
-    margin-top: 30px;    
+    margin-top: 20px;    
 }
 

@@ -32,14 +32,13 @@ function App() {
           <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route exact path="/" component={Home} />
-            <ProtectedRoute path="/apply" component={ApplyOffcampus} isLoggedIn={loggedIn}/>
-            <Route exact path="/apply" component={Apply} />
+            <ProtectedRoute path="/apply" component={Apply} isLoggedIn={loggedIn}/>
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/help" component={Help} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/houses" component={ApplyOffcampus} />
             <Route exact path="/singleRoom" component={SingleRoom} />
-            <Route exact path="/apply" component={Apply} />
+            {/* <Route exact path="/apply" component={Apply} /> */}
             <Route exact path="/apply/oncampus" component={ApplyOncampus} />
             <Route
               exact

@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from "./ApplyOffSidebar";
 import MainArea from "./ApplyOffMain";
 import "./ApplyOffcampus.css"
+import {withRouter} from "react-router-dom"
 
 function ApplyOffcampus() {
     return (
@@ -12,4 +13,4 @@ function ApplyOffcampus() {
     )
 }
 
-export default ApplyOffcampus
+export default withRouter(ApplyOffcampus)
