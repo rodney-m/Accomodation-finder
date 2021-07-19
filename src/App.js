@@ -19,9 +19,10 @@ import ApplyOffcampus from "./components/ApplyOffcampus";
 import ProtectedRoute from "./pages/ProtectedRoutes";
 
 import { LoginContext } from "./Helper/Context";
+import HouseOwnerCreateAcc from "./components/HouseOwnerCreateAcc";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   return (
     <div className="App">
       <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
@@ -55,6 +56,7 @@ function App() {
             />
 
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/offcampus/landlord" component={HouseOwnerCreateAcc} />
             <Route component={Error} />
           </Switch>
         </Router>

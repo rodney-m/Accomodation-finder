@@ -1,0 +1,16 @@
+.HouseOwnerCreateAcc input{
+    margin: .5rem 0;
+
+}
+
+.HouseOwnerCreateAcc .container{
+    max-width: 700px;
+    margin: 40px auto ;
+    background-color: #eeeeee;
+    padding: 2.5rem;
+    border-radius: 10px;
+}
+
+.MuiFormControl-root{
+    margin: 16px;
+}
