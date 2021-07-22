@@ -38,9 +38,17 @@ function NavBar() {
 
           <li>{loggedIn ? "Logged In" : "Not Logged In"} </li>
         </ul>
-        <Button onClick={onLogout} variant="contained" color="primary">
+        {
+          loggedIn ?
+          <Button onClick={onLogout} variant="contained" color="secondary">
           LogOut
+          </Button> : 
+          <Link to="/login" >
+            <Button variant="contained" color="primary">
+              LogIn
         </Button>
+          </Link>
+        }
       </div>
     );
   } else {

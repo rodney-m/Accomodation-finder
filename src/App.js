@@ -28,34 +28,44 @@ function App() {
         <Router>
           <NavBar />
           <Switch>
+            <Route exact path="/" component={Home} />
+
+            <Route exact path="/login" component={LogIn} />
+
+            <Route exact path="/help" component={Help} />
+
+            <Route exact path="/contact" component={Contact} />
+
             <ProtectedRoute
-              path="/apply"
+              exact
+              path="/apply/"
               component={Apply}
               isLoggedIn={loggedIn}
             />
+
             <ProtectedRoute
-              path="/apply/offcampus"
               exact
+              path="/apply/offcampus"
               component={ApplyOffcampus}
               isLoggedIn={loggedIn}
             />
-            {/* <Route exact path="/apply/offcampus" component={ApplyOffcampus} /> */}
-            <Route exact path="/apply/oncampus" component={ApplyOncampus} />
 
-            <Route path="/dashboard" component={Dashboard} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/help" component={Help} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/singleRoom" component={SingleRoom} />
+            <ProtectedRoute
+              exact
+              path="/apply/oncampus"
+              component={ApplyOncampus}
+              isLoggedIn={loggedIn}
+            />
+
             <Route
               exact
               path="/apply/oncampus/:hostelNumber"
               component={HostelView}
             />
 
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/offcampus/landlord" component={HouseOwnerCreateAcc} />
+            <Route exact path="/dashboard" component={Dashboard} />
+
+            <Route exact path="/offcampus/landlord" component={HouseOwnerCreateAcc} />
             <Route component={Error} />
           </Switch>
         </Router>
