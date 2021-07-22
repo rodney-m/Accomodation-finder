@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./ApplyOncampus.css";
 import HostelsImg from "../images/hostels.jpg";
-import { ImManWoman, ImMan, ImWoman} from "react-icons/im";
 import {Link} from "react-router-dom"
 import ViewHostel from "./ViewHostel";
-import WifiIcon from '@material-ui/icons/Wifi';
-import VideocamIcon from '@material-ui/icons/Videocam';
+// import WifiIcon from '@material-ui/icons/Wifi';
+// import VideocamIcon from '@material-ui/icons/Videocam';
+// import { ImManWoman, ImMan, ImWoman} from "react-icons/im";
 
 import {useSelector} from "react-redux"
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import RateReviewIcon from "@material-ui/icons/RateReview";

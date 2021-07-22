@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
 function PieChart({ data: newData }) {

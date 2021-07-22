@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import "./Login.css";
 import { Link } from "react-router-dom";
+import "./Login.css";
 
 import { useHistory } from "react-router-dom";
 import {LoginContext} from "../Helper/Context"
@@ -50,9 +50,9 @@ function Login() {
 
               <button onClick={onLogin}>LOGIN</button>
 
-              <a href="#" className="forgot-pass">
+              <Link to="#" className="forgot-pass">
                 Forgot your password?
-              </a>
+              </Link>
             </div>
           </form>
         </div>

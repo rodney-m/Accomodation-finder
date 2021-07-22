@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./Hostel.css";
 import InfoIcon from "@material-ui/icons/Info";
 import { IconButton } from "@material-ui/core";

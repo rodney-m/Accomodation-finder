@@ -19,6 +19,9 @@
 
 .NavBar a{
     height: 100%;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
 }
 
 .NavBar .navLinks li{

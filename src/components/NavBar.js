@@ -20,15 +20,11 @@ function NavBar() {
           <img className="headerLogo" src={Logo} alt="HIT Logo" />
         </Link>
         <ul className="navLinks">
-          <Link to="/Apply">
-            <li>Apply</li>
+          <Link to="/Apply/oncampus">
+            <li>Oncampus</li>
           </Link>
 
-          <Link to="/Houses">
-            <li>Houses</li>
-          </Link>
-
-          <Link to="apply/offcampus">
+          <Link to="/Apply/offcampus">
             <li>Offcampus</li>
           </Link>
 
@@ -37,7 +33,7 @@ function NavBar() {
           </Link>
 
           <Link to="/Contact">
-            <li>Contact</li>
+            <li>Contact Us</li>
           </Link>
 
           <li>{loggedIn ? "Logged In" : "Not Logged In"} </li>

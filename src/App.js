@@ -10,7 +10,6 @@ import Help from "./pages/Help";
 import Contact from "./pages/Contact";
 import SingleRoom from "./pages/SingleRoom";
 import Dashboard from "./pages/Dashboard";
-import DashboadNav from "./components/DashboadNav";
 import Apply from "./components/Apply";
 import ApplyOncampus from "./components/ApplyOncampus";
 import HostelView from "./components/HostelView";
