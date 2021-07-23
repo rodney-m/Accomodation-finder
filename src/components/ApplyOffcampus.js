@@ -18,7 +18,8 @@ function ApplyOffcampus() {
              setHouseType={setHouseType}
              />
 
-            <MainArea />
+            <MainArea 
+             filteringPrice={price}/>
         </div>
     )
 }

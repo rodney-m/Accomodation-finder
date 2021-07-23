@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./StarRating.css";
 import { FaStar } from "react-icons/fa";
-function StarRating() {
+
+function StarRating({currentRating}) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
+
 
   return (
     <div className="StarRating">

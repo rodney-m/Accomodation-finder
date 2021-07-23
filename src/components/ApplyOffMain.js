@@ -11,14 +11,14 @@ import Icon from "@material-ui/core/Icon";
 
 import HouseImg from "../images/off-campus-01.jpg";
 
-function ApplyOffMain() {
+function ApplyOffMain({filteringPrice}) {
   let houses = [
     {
       address: "54 Ganges Road, Belvedere",
       curfew: "10",
       availableBeds: 5,
       availableBathRooms: 2,
-      price: 50,
+      price: 30,
       currentRating: 3,
       description:
         "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
@@ -38,7 +38,7 @@ function ApplyOffMain() {
       curfew: "8",
       availableBeds: 15,
       availableBathRooms: 3,
-      price: 90,
+      price: 99,
       currentRating: 4,
       description:
         "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
@@ -49,7 +49,7 @@ function ApplyOffMain() {
       availableBeds: 5,
       availableBathRooms: 2,
       price: 50,
-      currentRating: 3,
+      currentRating: 1,
       description:
         "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
     },
@@ -58,12 +58,17 @@ function ApplyOffMain() {
       curfew: "10",
       availableBeds: 5,
       availableBathRooms: 2,
-      price: 50,
+      price: 90,
       currentRating: 3,
       description:
         "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
     },
   ];
+
+  let filteredHouses;
+  filteredHouses = houses.filter((house)  => {
+    return house.price < filteringPrice
+  })
 
   const [apply, setApply] = useState(false);
   const [moreInfoBtnText, setMoreInfoBtnText] = useState("More Info");
@@ -79,7 +84,7 @@ function ApplyOffMain() {
 
   return (
     <div className="ApplyOffMain">
-      {houses.map((house) => {
+      {filteredHouses.map((house) => {
         return (
           <div className="houseThumb">
             <div className="houseThumbContainer">
