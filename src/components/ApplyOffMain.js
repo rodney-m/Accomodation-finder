@@ -12,6 +12,59 @@ import Icon from "@material-ui/core/Icon";
 import HouseImg from "../images/off-campus-01.jpg";
 
 function ApplyOffMain() {
+  let houses = [
+    {
+      address: "54 Ganges Road, Belvedere",
+      curfew: "10",
+      availableBeds: 5,
+      availableBathRooms: 2,
+      price: 50,
+      currentRating: 3,
+      description:
+        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
+    },
+    {
+      address: "4 Lowley Road, Belvedere",
+      curfew: "7",
+      availableBeds: 10,
+      availableBathRooms: 1,
+      price: 70,
+      currentRating: 5,
+      description:
+        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
+    },
+    {
+      address: "9 Castens Ave, Belvedere",
+      curfew: "8",
+      availableBeds: 15,
+      availableBathRooms: 3,
+      price: 90,
+      currentRating: 4,
+      description:
+        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
+    },
+    {
+      address: "8 Anson Road, Ridgeview",
+      curfew: "10",
+      availableBeds: 5,
+      availableBathRooms: 2,
+      price: 50,
+      currentRating: 3,
+      description:
+        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
+    },
+    {
+      address: "17 Eyles Road, Belvedere",
+      curfew: "10",
+      availableBeds: 5,
+      availableBathRooms: 2,
+      price: 50,
+      currentRating: 3,
+      description:
+        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
+    },
+  ];
+
   const [apply, setApply] = useState(false);
   const [moreInfoBtnText, setMoreInfoBtnText] = useState("More Info");
 
@@ -26,87 +79,90 @@ function ApplyOffMain() {
 
   return (
     <div className="ApplyOffMain">
-      <div className="houseThumb">
-        <div className="houseThumbContainer">
-          <div className="image">
-            <img src={HouseImg} alt="off campus house" />
-          </div>
-          <div className="text">
-            <h4>54 Ganges Road, Belvedere</h4>
-            <div className="properties">
-              <span className="icon">
-                <h6>10 PM</h6>
-                <IoTimeOutline />
-              </span>
-              <span className="icon">
-                <h6>5 </h6>
-                <IoMdBed />
-              </span>
-              <span className="icon">
-                <h6>2 </h6>
-                <FaBath />
-              </span>
-            </div>
-            <h4 className="price">$50 / month </h4>
-            <div className="ratings">
-              <StarRating />
-            </div>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={onApply}
-              endIcon={<Icon>info</Icon>}
-            >
-              {moreInfoBtnText}
-            </Button>
-          </div>
-        </div>
-
-        {apply ? (
-          <div className="fullDetails">
-            <hr />
-            <div className="images">
-              <img src={HouseImg} alt="off campus house" />
-              <img src={HouseImg} alt="off campus house" />
-              <img src={HouseImg} alt="off campus house" />
-              <img src={HouseImg} alt="off campus house" />
-            </div>
-            <div className="description">
-              <h3>Description</h3>
-              <p>
-                This is a neat house. Only non smockers are permitted Curfew is
-                10pm No visitors after 8pm
-              </p>
-            </div>
-            <form noValidate autoComplete="off">
-              <div className="form-group">
-                <TextField id="standard-basic" label="Enter Phone Number" />
+      {houses.map((house) => {
+        return (
+          <div className="houseThumb">
+            <div className="houseThumbContainer">
+              <div className="image">
+                <img src={HouseImg} alt="off campus house" />
               </div>
-
-              <div className="form-group">
-                <TextField
-                  label="Message house owner"
-                  multiline
-                  rows={4}
-                  defaultValue="I am interested in your house"
-                  fullWidth
-                />
+              <div className="text">
+                <h4>{house.address}</h4>
+                <div className="properties">
+                  <span className="icon">
+                    <h6>{house.curfew} PM</h6>
+                    <IoTimeOutline />
+                  </span>
+                  <span className="icon">
+                    <h6>{house.availableBeds} </h6>
+                    <IoMdBed />
+                  </span>
+                  <span className="icon">
+                    <h6>{house.availableBathRooms} </h6>
+                    <FaBath />
+                  </span>
+                </div>
+                <h4 className="price">${house.price} / month </h4>
+                <div className="ratings">
+                  <StarRating />
+                </div>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={onApply}
+                  endIcon={<Icon>info</Icon>}
+                >
+                  {moreInfoBtnText}
+                </Button>
               </div>
+            </div>
 
-              <Button
-                variant="contained"
-                color="primary"
-                endIcon={<Icon>send</Icon>}
-                onClick={onApply}
-              >
-                Send
-              </Button>
-            </form>
+            {apply ? (
+              <div className="fullDetails">
+                <hr />
+                <div className="images">
+                  <img src={HouseImg} alt="off campus house" />
+                  <img src={HouseImg} alt="off campus house" />
+                  <img src={HouseImg} alt="off campus house" />
+                  <img src={HouseImg} alt="off campus house" />
+                </div>
+                <div className="description">
+                  <h3>Description</h3>
+                  <p>
+                    {house.description}
+                  </p>
+                </div>
+                <form noValidate autoComplete="off">
+                  <div className="form-group">
+                    <TextField id="standard-basic" label="Enter Phone Number" />
+                  </div>
+
+                  <div className="form-group">
+                    <TextField
+                      label="Message house owner"
+                      multiline
+                      rows={4}
+                      defaultValue="I am interested in your house"
+                      fullWidth
+                    />
+                  </div>
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<Icon>send</Icon>}
+                    onClick={onApply}
+                  >
+                    Send
+                  </Button>
+                </form>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-        ) : (
-          ""
-        )}
-      </div>
+        );
+      })}
     </div>
   );
 }

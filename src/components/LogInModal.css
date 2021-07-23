@@ -1,0 +1,30 @@
+.LogInModal{
+    background-color: #ffffff;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 450px;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 7px 24px -8px rgba(0,0,0,0.85);
+-webkit-box-shadow: 5px 7px 24px -8px rgba(0,0,0,0.85);
+-moz-box-shadow: 5px 7px 24px -8px rgba(0,0,0,0.85);
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.close:hover{
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+hr{
+    border: 1px solid #999;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

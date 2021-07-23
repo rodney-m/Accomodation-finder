@@ -8,16 +8,15 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-function ApplyOffSidebar() {
+function ApplyOffSidebar({price, setPrice, houseType, setHouseType}) {
 
-  const [price, setPrice] = useState(0);
+  
 
   const upDateRange = (e, data) => {
     setPrice(data);
   };
 
-  const [houseType, setHouseType] =  useState('female');
-
+  
   const upDateHouseType = (e, data) => {
     setHouseType(data);
   };
@@ -30,7 +29,7 @@ function ApplyOffSidebar() {
         <Slider min={0} max="100" value={price} onChange={upDateRange} />
         <h5>$ {price}</h5>
       </div>
-      <div className="filterPrice">
+      <div className="filterHouseType">
         <FormControl component="fieldset">
           <FormLabel component="legend">House type (Gender)</FormLabel>
           <RadioGroup
@@ -44,12 +43,13 @@ function ApplyOffSidebar() {
               control={<Radio color="primary" />}
               label="Female"
             />
-            <FormControlLabel value="male" control={<Radio />} label="Male" />
-            <FormControlLabel value="mixed" control={<Radio />} label="Mixed" />
+            <FormControlLabel value="male" control={<Radio color="primary"  />} label="Male" />
+            <FormControlLabel value="mixed" control={<Radio color="primary"  />} label="Mixed" />
             
           </RadioGroup>
         </FormControl>
       </div>
+      
     </div>
   );
 }

@@ -1,16 +1,19 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import LogInModal from "../components/LogInModal";
 
 import { useHistory } from "react-router-dom";
-import {LoginContext} from "../Helper/Context"
+import { LoginContext } from "../Helper/Context";
 
 function Login() {
-
-  const {loggedIn, setLoggedIn} = useContext(LoginContext);
-
+  const { loggedIn, setLoggedIn } = useContext(LoginContext);
   const [toggle, setToggle] = useState(true);
   let history = useHistory();
+  const [regNo, setRegNo] = useState("");
+  const [password, setPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
 
   const toggler = (e) => {
     e.preventDefault();
@@ -18,9 +21,23 @@ function Login() {
   };
 
   // on Login
-  const onLogin = () => {
-    setLoggedIn(true);
-    history.push("/apply");
+  const onLogin = (e) => {
+    e.preventDefault();
+    if (regNo === "" && password === "") {
+      setMessage("Registration Number and Password fields cannot be empty");
+      setShowModal(true);
+    } else if (regNo === "") {
+      setMessage("Registration Number field cannot be empty");
+      setShowModal(true);
+    } else if (password === "") {
+      setMessage("Password field cannot be empty");
+      setShowModal(true);
+    } else{
+      setLoggedIn(true);
+      history.push("/apply")
+    }
+
+    ;
   };
 
   return (
@@ -45,8 +62,8 @@ function Login() {
           {/* Login form start */}
           <form action="">
             <div className="input-container">
-              <input type="text" placeholder="Registration No." />
-              <input type="password" placeholder="Password" />
+              <input type="text" placeholder="Registration No." onChange={(e) => setRegNo(e.target.value)} />
+              <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}  />
 
               <button onClick={onLogin}>LOGIN</button>
 
@@ -73,6 +90,13 @@ function Login() {
           </form>
         </div>
       </div>
+
+      {
+        showModal ?  
+          <LogInModal setShowModal={setShowModal} message={message} />
+        : ""
+      }
+      
     </div>
   );
 }

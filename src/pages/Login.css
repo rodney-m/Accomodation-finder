@@ -75,8 +75,14 @@
     border-radius: 5px;
     padding: 12px 15px;
     margin: 8px 0;
-    width: 100%;
+    width: 100%;    
   }
+  .form-container input:focus {
+    outline: 1px solid #186aa5!important;
+  }
+
+
+
   .form-container a.forgot-pass {
     font-size: 0.7em;
     display: inline-block;

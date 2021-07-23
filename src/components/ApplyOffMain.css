@@ -36,7 +36,12 @@
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #ccc;
+    margin-top: 2rem!important;
+    box-shadow: 5px 7px 24px -15px rgba(0,0,0,0.85);
+-webkit-box-shadow: 5px 7px 24px -15px rgba(0,0,0,0.85);
+-moz-box-shadow: 5px 7px 24px -15px rgba(0,0,0,0.85);
 }
+
 .ApplyOffMain .houseThumbContainer{
     display: flex;
     align-items: center;
