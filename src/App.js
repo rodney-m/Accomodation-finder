@@ -21,7 +21,7 @@ import { LoginContext } from "./Helper/Context";
 import HouseOwnerCreateAcc from "./components/HouseOwnerCreateAcc";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div className="App">
       <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
