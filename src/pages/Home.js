@@ -1,14 +1,22 @@
 import React from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import RateReviewIcon from "@material-ui/icons/RateReview";
 import Footer from "../components/Footer";
 import CommentIcon from "@material-ui/icons/Comment";
 import Button from "@material-ui/core/Button";
+import houseOwnerImg from "../images/houseOwner.jpg"
 
 function Home() {
+  let history = useHistory();
+
+  const onListHouse = (e) => {
+    e.preventDefault()
+    history.push("/landlords")
+  }
+
   return (
     <div className="Home">
       <div className="showcase">
@@ -27,6 +35,25 @@ function Home() {
           Take the hassle out of securing your student housing for the best
           years of your life.
         </p>
+      </div>
+
+      <div className="house-owner">
+        <div className="text">
+          <h3>Are you a house owner ?</h3>
+          <p>List your house with us and increase your reach</p>
+          <Button 
+            variant="contained" 
+            color="primary" onClick={onListHouse}>
+            List A House 
+          </Button>
+        </div>
+        <div className="image">
+          <img src={houseOwnerImg} alt="" />
+        </div>
+      </div>
+
+      <div className="center">
+        <h2>Modern way of booking for accomodation</h2>
       </div>
 
       <div className="bottom">

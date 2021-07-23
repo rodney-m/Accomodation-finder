@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
@@ -7,8 +7,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
 
 import "./HouseOwnerCreateAcc.css";
+import { Link, useHistory } from "react-router-dom";
+import LogInModal from "../components/LogInModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,14 +37,37 @@ export default function HouseOwnerCreateAcc() {
 
   const [gender, setGender] = React.useState("");
 
-  const handleChange = (event) => {
+  const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
+
+  let history = useHistory();
+
+   const handleChange = (event) => {
     setGender(event.target.value);
+    
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setMessage("Thank you for applying to list your account. You will get an email once your request is approved");
+    setShowModal(true);
   };
 
   return (
     <div className="HouseOwnerCreateAcc {classes.root}">
+      <p className="redirect">
+        Take me <Link to="/"> &lt; &lt; Back Home</Link>
+      </p>
       <div className="container">
-          <h3>Please Note that for your house to be listed your account has to be approved first</h3>
+        <h3>
+          Please Note that for your house to be listed your account has to be
+          approved first
+        </h3>
+        <p>
+          <em>
+            Already been approved ? <Link>LogIn</Link>
+          </em>
+        </p>
         <div>
           <TextField
             label="First Name"
@@ -134,7 +160,12 @@ export default function HouseOwnerCreateAcc() {
             type="password"
           />
         </div>
+        <Button variant="contained" color="primary" onClick={onSubmit}>
+          Submit
+        </Button>
       </div>
+
+      { showModal ? <LogInModal message={message} setShowModal={setShowModal} /> : ""}
     </div>
   );
 }

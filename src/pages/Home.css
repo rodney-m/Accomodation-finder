@@ -45,6 +45,30 @@
     margin: 20px 0;
 }
 
+.house-owner{
+    display: flex;
+}
+.house-owner .text{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.house-owner .image{
+    flex: 1;
+}
+.house-owner .image img{
+    width: 100%;
+    height: 100%;
+}
+
+.house-owner .text > *{
+    margin: 1rem;
+}
+
+
+
 .center{
     background: linear-gradient(to right, rgb(23, 64, 153), rgb(0, 255, 242));
     color: white;

@@ -13,7 +13,8 @@ function NavBar() {
   }
 
   let location = useLocation();
-  if (!location.pathname.startsWith("/dashboard")) {
+  if (!location.pathname.startsWith("/dashboard") &&
+      !location.pathname.startsWith("/landlords")) {
     return (
       <div className="NavBar">
         <Link to="/">

@@ -1,12 +1,22 @@
 import React from 'react'
 import { GrClose } from "react-icons/gr";
 import "./LogInModal.css"
+import { useHistory, useLocation} from "react-router-dom"
 
 function LogInModal({setShowModal, message}) {
+    let location = useLocation()
+    let history = useHistory()
+    const onClose = () =>{
+        if (location.pathname.startsWith("/landlords")){
+            setShowModal(false)
+            history.push("/");
+        } 
+        setShowModal(false)
+    }
     return (
         <div className="LogInModal">
             <h3>Error</h3>
-            <GrClose className="close" onClick={() => setShowModal(false)} />
+            <GrClose className="close" onClick={onClose} />
             <hr />
             <p>
                 {message}

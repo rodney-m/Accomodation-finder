@@ -65,7 +65,7 @@ function App() {
 
             <Route exact path="/dashboard" component={Dashboard} />
 
-            <Route exact path="/offcampus/landlord" component={HouseOwnerCreateAcc} />
+            <Route exact path="/landlords" component={HouseOwnerCreateAcc} />
             <Route component={Error} />
           </Switch>
         </Router>
