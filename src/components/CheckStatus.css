@@ -1,0 +1,52 @@
+.CheckStatus{
+    flex-grow: 1;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    position: relative;
+}
+.CheckStatus h1{
+    text-align: center;
+    margin: 16px 0;
+}
+
+.pending-btn{
+    display: inline-block;
+    background-color: cornflowerblue;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 16px 25px;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.pending-btn:hover{
+    background-color: rgb(56, 112, 216);
+}
+
+.CheckStatus table{
+    width: 95%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.CheckStatus table tbody tr:nth-child(even){
+    background-color: #eee;
+}
+
+.CheckStatus table tbody tr td{
+    padding: 5px !important;
+    text-align: left;
+}
+.CheckStatus table thead tr td{
+    background-color: #eeeeee;
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.info{
+    color: cornflowerblue;
+}

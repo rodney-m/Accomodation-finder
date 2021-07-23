@@ -7,7 +7,7 @@ function LogInModal({setShowModal, message}) {
     let location = useLocation()
     let history = useHistory()
     const onClose = () =>{
-        if (location.pathname.startsWith("/landlords")){
+        if (location.pathname === "/landlords"){
             setShowModal(false)
             history.push("/");
         } 
@@ -16,7 +16,7 @@ function LogInModal({setShowModal, message}) {
     return (
         <div className="LogInModal">
             <h3>Error</h3>
-            <GrClose className="close" onClick={onClose} />
+            <GrClose className="closeX" onClick={onClose} />
             <hr />
             <p>
                 {message}

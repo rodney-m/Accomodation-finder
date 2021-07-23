@@ -1,0 +1,36 @@
+.Login{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to right, rgba(23, 64, 153, 0.6), rgba(0, 255, 242, 0.6)),
+    url('../images/landlord-login.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.loginFormContainer{
+    background-color: #fff;
+    padding: 30px;
+    min-width: 400px;
+}
+
+.formInput input{
+    width: 100%;
+    padding: .7rem;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formInput{
+    margin: 1.2rem 0;
+}
+
+.loginFormContainer button{
+    width: 100%;
+    padding: .7rem;
+    background-color: cornflowerblue;
+    color: white;
+    border: 0;
+}

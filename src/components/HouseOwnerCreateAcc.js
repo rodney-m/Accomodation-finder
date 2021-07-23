@@ -65,7 +65,7 @@ export default function HouseOwnerCreateAcc() {
         </h3>
         <p>
           <em>
-            Already been approved ? <Link>LogIn</Link>
+            Already been approved ? <Link to="/landlords/login">LogIn</Link>
           </em>
         </p>
         <div>

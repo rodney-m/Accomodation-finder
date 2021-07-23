@@ -10,7 +10,7 @@
     
 }
 
-.close{
+.PendingModal .close{
     color: white;
     float: right;
     position: absolute;

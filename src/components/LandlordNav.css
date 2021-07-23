@@ -1,0 +1,9 @@
+.LandlordNav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #eeeeee;
+    height: 10vh;
+    border-bottom: 1px solid #fff;
+}

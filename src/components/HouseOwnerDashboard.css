@@ -1,0 +1,29 @@
+.HouseOwnerDashboard{
+    padding: 1rem;
+}
+.HouseOwnerDashboard h1{
+    text-align: center;
+}
+.HouseOwnerDashboard table{
+    width: 95%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.HouseOwnerDashboard table tbody tr:nth-child(even){
+    background-color: #eee;
+}
+
+.HouseOwnerDashboard table tbody tr td{
+    padding: 5px !important;
+    text-align: left;
+}
+.HouseOwnerDashboard table thead tr td{
+    background-color: #eeeeee;
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: left;
+}
