@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ApplyOffMain.css";
 
 import { IoTimeOutline } from "react-icons/io5";
@@ -10,60 +10,21 @@ import TextField from "@material-ui/core/TextField";
 import Icon from "@material-ui/core/Icon";
 
 import HouseImg from "../images/off-campus-01.jpg";
+import axios from 'axios';
 
 function ApplyOffMain({filteringPrice}) {
-  let houses = [
-    {
-      address: "54 Ganges Road, Belvedere",
-      curfew: "10",
-      availableBeds: 5,
-      availableBathRooms: 2,
-      price: 30,
-      currentRating: 3,
-      description:
-        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
-    },
-    {
-      address: "4 Lowley Road, Belvedere",
-      curfew: "7",
-      availableBeds: 10,
-      availableBathRooms: 1,
-      price: 70,
-      currentRating: 5,
-      description:
-        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
-    },
-    {
-      address: "9 Castens Ave, Belvedere",
-      curfew: "8",
-      availableBeds: 15,
-      availableBathRooms: 3,
-      price: 99,
-      currentRating: 4,
-      description:
-        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
-    },
-    {
-      address: "8 Anson Road, Ridgeview",
-      curfew: "10",
-      availableBeds: 5,
-      availableBathRooms: 2,
-      price: 50,
-      currentRating: 1,
-      description:
-        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
-    },
-    {
-      address: "17 Eyles Road, Belvedere",
-      curfew: "10",
-      availableBeds: 5,
-      availableBathRooms: 2,
-      price: 90,
-      currentRating: 3,
-      description:
-        "This is a neat house. Only non smockers are permitted. Curfew is 10pm No visitors after 8pm",
-    },
-  ];
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/offcampus/")
+      .then((response) => {
+        setHouses(response.data.filter((data) => data.approved === true));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   let filteredHouses;
   filteredHouses = houses.filter((house)  => {

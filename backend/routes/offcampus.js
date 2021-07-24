@@ -10,22 +10,30 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const owner = req.body.owner;
     const address = req.body.address;
-    const phone_number = req.body.phone_number;
+    const phoneNumber = req.body.phone_number;
     const gender = req.body.gender;
-    const beds = Number(req.body.beds);
-    const cost = req.body.cost;
+    const availableBeds = Number(req.body.availableBeds);
+    const availableBathrooms = Number(req.body.availableBathrooms);
+    const currentRating = Number(req.body.currentRating);
+    const price = req.body.price;
+    const curfew = req.body.curfew;
     const amenities = req.body.amenities;
+    const description = req.body.description;
     const images = req.body.images;
     const approved = req.body.approved;
 
     const newHouse = new House({
         owner,
         address,
-        phone_number,
+        phoneNumber,
         gender,
-        beds,
-        cost,
+        availableBeds,
+        availableBathrooms,
+        currentRating,
+        price,
+        curfew,
         amenities,
+        description,
         images,
         approved
     });

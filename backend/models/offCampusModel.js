@@ -5,12 +5,16 @@ const Schema = mongoose.Schema;
 const offCampusSchema = new Schema({
     owner: String,
     address: String,
-    phone_number: String,
+    phoneNumber: String,
     gender: String,
-    beds: Number,
-    cost: String,
+    availableBeds: Number,
+    availableBathRooms: Number,
+    price: String,
     amenities: String,
+    description: String,
     images: String,
+    currentRating: Number,
+    curfew: String,
     approved: Boolean
 });
 
