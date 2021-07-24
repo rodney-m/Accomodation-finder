@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import Button from '@material-ui/core/Button';
 import "./LandlordNav.css"
 import {useLocation} from "react-router-dom"
 import { AiOutlineDashboard } from "react-icons/ai";
+import { LandlordLoginContext } from "../Helper/Context";
 
 function LandlordNav() {
+  const { isLandlordLoggedIn, setIsLandlordLoggedIn } = useContext(LandlordLoginContext);
     let location = useLocation();
+
+    const onLogout = () => {
+      setIsLandlordLoggedIn(false);
+    }
+
     if(location.pathname.startsWith("/landlords")){
         return (
             <div className="LandlordNav">
@@ -16,7 +23,7 @@ function LandlordNav() {
                   </h3>
                 </div>
                 <div className="right">
-                  <Button variant="contained" color="secondary">
+                  <Button onClick={onLogout} variant="contained" color="secondary">
                     Logout
                   </Button>
                 </div>
