@@ -33,7 +33,7 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   return (
     <div className="App">
-      <AdminLoginContext.Provider value={{ loggedIn, setLoggedIn }} >
+      <AdminLoginContext.Provider value={{ isAdmin, setIsAdmin }} >
       <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
         <Router>
           <NavBar />
@@ -80,7 +80,7 @@ function App() {
             />
 
             <DeanProtectedRoute 
-              isAdmin={false}
+              isAdmin={isAdmin}
               path="/dashboard"
               component={Dashboard}
             />

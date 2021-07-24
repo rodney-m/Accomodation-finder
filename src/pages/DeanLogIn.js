@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./DeanLogIn.css";
 import LogInModal from "../components/LogInModal";
 import {useHistory} from "react-router-dom"
+import { AdminLoginContext } from "../Helper/Context";
 
 function Login() {
+  const {isAdmin, setIsAdmin} = useContext(AdminLoginContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +25,7 @@ function Login() {
         setMessage("Password field cannot be empty");
       setShowModal(true);
     } else {
+        setIsAdmin(true);
         history.push("/dashboard");
     }
   };
