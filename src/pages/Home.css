@@ -102,3 +102,8 @@
     text-align: center;
     padding-top: 30px;
 }
+
+.bottom {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
