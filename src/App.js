@@ -14,11 +14,16 @@ import Apply from "./components/Apply";
 import ApplyOncampus from "./components/ApplyOncampus";
 import HostelView from "./components/HostelView";
 import ApplyOffcampus from "./components/ApplyOffcampus";
+import LogInHouseOwner from "./pages/LoginHouseOwner"
+import DeanLogIn from "./pages/DeanLogIn"
 
 import ProtectedRoute from "./pages/ProtectedRoutes";
 
 import { LoginContext } from "./Helper/Context";
 import HouseOwnerCreateAcc from "./components/HouseOwnerCreateAcc";
+import HouseOwnerDashboard from "./components/HouseOwnerDashboard";
+import LandlordNav from "./components/LandlordNav";
+import CheckStatus from "./components/CheckStatus";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -27,6 +32,7 @@ function App() {
       <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
         <Router>
           <NavBar />
+          <LandlordNav />
           <Switch>
             <Route exact path="/" component={Home} />
 
@@ -62,10 +68,18 @@ function App() {
               path="/apply/oncampus/:hostelNumber"
               component={HostelView}
             />
+            <Route
+              exact
+              path="/apply/status"
+              component={CheckStatus}
+            />
 
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={Dashboard} />
 
-            <Route exact path="/offcampus/landlord" component={HouseOwnerCreateAcc} />
+            <Route exact path="/landlords" component={HouseOwnerCreateAcc} />
+            <Route exact path="/landlords/logIn" component={LogInHouseOwner} />
+            <Route exact path="/landlords/dashboard" component={HouseOwnerDashboard} />
+            <Route exact path="/admin" component={DeanLogIn} />
             <Route component={Error} />
           </Switch>
         </Router>

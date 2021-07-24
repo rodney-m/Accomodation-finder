@@ -3,6 +3,14 @@
 
 }
 
+.redirect{
+    color: #333;
+    font-weight: 600;
+    text-align: center !important;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
 .HouseOwnerCreateAcc .container{
     max-width: 700px;
     margin: 40px auto ;

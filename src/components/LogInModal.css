@@ -11,14 +11,14 @@
 -moz-box-shadow: 5px 7px 24px -8px rgba(0,0,0,0.85);
 }
 
-.close{
+.LogInModal .closeX{
     position: absolute;
     top: 0;
     right: 0;
     margin: 20px;
 }
 
-.close:hover{
+.closeX:hover{
     cursor: pointer;
     transform: rotate(45deg);
 }

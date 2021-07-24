@@ -26,7 +26,7 @@ function Apply() {
       </div>
       <div className="bottom-section">
         <h1>Check Application Status</h1>
-        <Link to="/apply/offcampus">
+        <Link to="/apply/status">
           <IconButton>
             <span className="btn">Check</span>
           </IconButton>
