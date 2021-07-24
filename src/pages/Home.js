@@ -91,50 +91,6 @@ function Home() {
         </div>
       </div>
 
-      <div className="center">
-        <h2>Reviews</h2>
-        <p>Take a peek at the reviews.</p>
-      </div>
-
-      <div className="div3">
-        <div className="reviews">
-          <div className="review">
-            <div className="logo"></div>
-            <div className="text">
-              <CommentIcon color="primary" style={{ fontSize: 40 }} />
-              <p>
-                We help you find the exact accommodation to fit your needs.
-                Choose from lots of quality accommodations.
-              </p>
-              <h3>T Mukwazhe - 2nd year CS student</h3>
-            </div>
-          </div>
-          <div className="review">
-            <div className="logo"></div>
-            <div className="text">
-              <CommentIcon color="primary" style={{ fontSize: 40 }} />
-              <p>
-                We will help you in sourcing, booking and the paperwork required
-                in the process. No need to worry about a thing!
-              </p>
-              <h3> Keith C - 2nd year CS student</h3>
-            </div>
-          </div>
-          <div className="review">
-            <div className="logo"></div>
-            <div className="text">
-              <CommentIcon color="primary" style={{ fontSize: 40 }} />
-
-              <p>
-                There are reviews and ratings from students who have lived in
-                the properties.
-              </p>
-              <h3> Lionnel T - 2nd year CS student</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Footer />
     </div>
   );
