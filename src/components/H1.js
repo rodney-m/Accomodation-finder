@@ -35,7 +35,7 @@ function H1() {
       <table cellSpacing="0">
         <thead>
           <tr>
-            <td> Reg No. </td> <td> F.Name </td> <td> L.Name </td>
+            <td> Reg No. </td> <td> First Name(s) </td> <td> Surname </td>
             <td> Year </td> <td> Room No. </td> <td> Department </td>
             <td> Detail </td>
           </tr>
