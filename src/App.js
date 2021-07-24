@@ -18,8 +18,11 @@ import LogInHouseOwner from "./pages/LoginHouseOwner"
 import DeanLogIn from "./pages/DeanLogIn"
 
 import ProtectedRoute from "./pages/ProtectedRoutes";
+import DeanProtectedRoute from "./pages/DeanProtectedRoutes";
 
 import { LoginContext } from "./Helper/Context";
+import { AdminLoginContext } from "./Helper/Context";
+
 import HouseOwnerCreateAcc from "./components/HouseOwnerCreateAcc";
 import HouseOwnerDashboard from "./components/HouseOwnerDashboard";
 import LandlordNav from "./components/LandlordNav";
@@ -27,8 +30,10 @@ import CheckStatus from "./components/CheckStatus";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   return (
     <div className="App">
+      <AdminLoginContext.Provider value={{ loggedIn, setLoggedIn }} >
       <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
         <Router>
           <NavBar />
@@ -74,7 +79,13 @@ function App() {
               component={CheckStatus}
             />
 
-            <Route path="/dashboard" component={Dashboard} />
+            <DeanProtectedRoute 
+              isAdmin={false}
+              path="/dashboard"
+              component={Dashboard}
+            />
+
+            {/* <Route path="/dashboard" component={Dashboard} /> */}
 
             <Route exact path="/landlords" component={HouseOwnerCreateAcc} />
             <Route exact path="/landlords/logIn" component={LogInHouseOwner} />
@@ -84,6 +95,7 @@ function App() {
           </Switch>
         </Router>
       </LoginContext.Provider>
+      </AdminLoginContext.Provider>
     </div>
   );
 }
