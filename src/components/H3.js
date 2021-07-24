@@ -35,8 +35,8 @@ function H3() {
         <thead>
           <tr>
             <td>Reg No.</td>
-            <td>F. Name</td>
-            <td>L. Name</td>
+            <td> First Name(s) </td> 
+            <td> Surname </td>
             <td>Year</td>
             <td>Room No.</td>
             <td>Department</td>
