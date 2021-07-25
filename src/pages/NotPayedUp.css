@@ -1,0 +1,16 @@
+.NotPayedUp .MuiSvgIcon-root{
+    font-size: 5rem;
+    color: #ffc107;
+}
+
+
+.NotPayedUp .container{    
+    min-height: 90vh;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+}

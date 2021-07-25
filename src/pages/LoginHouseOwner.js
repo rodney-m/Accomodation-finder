@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./LoginHouseOwner.css";
 import LogInModal from "../components/LogInModal";
 import { LandlordLoginContext } from "../Helper/Context";
-import {useHistory} from "react-router-dom"
+import {useHistory, Link} from "react-router-dom"
 
 function Login() {
   const { isLandlordLoggedIn, setIsLandlordLoggedIn } = useContext(LandlordLoginContext);
@@ -53,6 +53,7 @@ function Login() {
           <button onClick={onLogin} type="submit">
             Submit
           </button>
+          <Link to="/" >back to home</Link>
         </form>
       </div>
       {showModal ? <LogInModal setShowModal={setShowModal} message={message} /> : ""}

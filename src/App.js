@@ -24,91 +24,103 @@ import LandlordProtectedRoute from "./pages/LandlordProtectedRoutes";
 import { LoginContext } from "./Helper/Context";
 import { AdminLoginContext } from "./Helper/Context";
 import { LandlordLoginContext } from "./Helper/Context";
+import { PayedTuition } from "./Helper/Context";
+import { Tuition } from "./Helper/Context";
 
 import HouseOwnerCreateAcc from "./components/HouseOwnerCreateAcc";
 import HouseOwnerDashboard from "./components/HouseOwnerDashboard";
 import LandlordNav from "./components/LandlordNav";
 import CheckStatus from "./components/CheckStatus";
+import NotPayedUp from "./pages/NotPayedUp";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLandlordLoggedIn, setIsLandlordLoggedIn] = useState(false);
+  const [tuitionPayed, setTuitionPayed] = useState(89);
+  const [currentTuition, setCurrentTuition] = useState(100);
   return (
     <div className="App">
-      <LandlordLoginContext.Provider value={{ isLandlordLoggedIn, setIsLandlordLoggedIn }} >
-        <AdminLoginContext.Provider value={{ isAdmin, setIsAdmin }}>
-          <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
-            <Router>
-              <NavBar />
-              <LandlordNav />
-              <Switch>
-                <Route exact path="/" component={Home} />
+      <Tuition.Provider value={{ currentTuition, setCurrentTuition }}>
+        <PayedTuition.Provider value={{ tuitionPayed, setTuitionPayed }}>
+          <LandlordLoginContext.Provider
+            value={{ isLandlordLoggedIn, setIsLandlordLoggedIn }}
+          >
+            <AdminLoginContext.Provider value={{ isAdmin, setIsAdmin }}>
+              <LoginContext.Provider value={{ loggedIn, setLoggedIn }}>
+                <Router>
+                  <NavBar />
+                  <LandlordNav />
+                  <Switch>
+                    <Route exact path="/" component={Home} />
 
-                <Route exact path="/login" component={LogIn} />
+                    <Route exact path="/login" component={LogIn} />
 
-                <Route exact path="/help" component={Help} />
+                    <Route exact path="/help" component={Help} />
 
-                <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/contact" component={Contact} />
 
-                <ProtectedRoute
-                  exact
-                  path="/apply/"
-                  component={Apply}
-                  isLoggedIn={loggedIn}
-                />
+                    <ProtectedRoute
+                      exact
+                      path="/apply/"
+                      component={Apply}
+                      isLoggedIn={loggedIn}
+                    />
 
-                <ProtectedRoute
-                  exact
-                  path="/apply/offcampus"
-                  component={ApplyOffcampus}
-                  isLoggedIn={loggedIn}
-                />
+                    <ProtectedRoute
+                      exact
+                      path="/apply/offcampus"
+                      component={ApplyOffcampus}
+                      isLoggedIn={loggedIn}
+                    />
 
-                <ProtectedRoute
-                  exact
-                  path="/apply/oncampus"
-                  component={ApplyOncampus}
-                  isLoggedIn={loggedIn}
-                />
+                    <ProtectedRoute
+                      exact
+                      path="/apply/oncampus"
+                      component={ApplyOncampus}
+                      isLoggedIn={loggedIn}
+                    />
 
-                <Route
-                  exact
-                  path="/apply/oncampus/:hostelNumber"
-                  component={HostelView}
-                />
-                <Route exact path="/apply/status" component={CheckStatus} />
+                    <Route
+                      exact
+                      path="/apply/oncampus/:hostelNumber"
+                      component={HostelView}
+                    />
+                    <Route exact path="/apply/status" component={CheckStatus} />
 
-                <DeanProtectedRoute
-                  isAdmin={isAdmin}
-                  path="/dashboard"
-                  component={Dashboard}
-                />
+                    <DeanProtectedRoute
+                      isAdmin={isAdmin}
+                      path="/dashboard"
+                      component={Dashboard}
+                    />
 
-                <Route
-                  exact
-                  path="/landlords"
-                  component={HouseOwnerCreateAcc}
-                />
-                <Route
-                  exact
-                  path="/landlords/logIn"
-                  component={LogInHouseOwner}
-                />
+                    <Route
+                      exact
+                      path="/landlords"
+                      component={HouseOwnerCreateAcc}
+                    />
+                    <Route
+                      exact
+                      path="/landlords/logIn"
+                      component={LogInHouseOwner}
+                    />
 
-                <LandlordProtectedRoute
-                  isLandlordLoggedIn={isLandlordLoggedIn}
-                  path="/landlords/dashboard"
-                  component={HouseOwnerDashboard}
-                />
+                    <LandlordProtectedRoute
+                      isLandlordLoggedIn={isLandlordLoggedIn}
+                      path="/landlords/dashboard"
+                      component={HouseOwnerDashboard}
+                    />
 
-                <Route exact path="/admin" component={DeanLogIn} />
-                <Route component={Error} />
-              </Switch>
-            </Router>
-          </LoginContext.Provider>
-        </AdminLoginContext.Provider>
-      </LandlordLoginContext.Provider>
+                    <Route exact path="/admin" component={DeanLogIn} />
+                    <Route exact path="/pay-fees" component={NotPayedUp} />
+                    <Route component={Error} />
+                  </Switch>
+                </Router>
+              </LoginContext.Provider>
+            </AdminLoginContext.Provider>
+          </LandlordLoginContext.Provider>
+        </PayedTuition.Provider>
+      </Tuition.Provider>
     </div>
   );
 }
