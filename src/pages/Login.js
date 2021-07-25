@@ -37,8 +37,8 @@ function Login() {
         } else {
 
             const newLogin = {
-                regNo: { regNo },
-                password: { password }
+                reg_number: regNo,
+                password: password
             };
 
             axios
