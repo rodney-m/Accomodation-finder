@@ -4,12 +4,6 @@ let User = require('../models/userModel');
 let Student = require('../models/studentModel');
 const jwt = require('jsonwebtoken');
 
-let fullName = '';
-let email = '';
-let paidTuition = '';
-let year = '';
-let dept = '';
-
 router.route('/signup').post((req, res, next) => {
     Student.findOne({ regNumber: req.body.reg_number })
         .then(student => {
