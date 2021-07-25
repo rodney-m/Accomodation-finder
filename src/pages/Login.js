@@ -54,6 +54,10 @@ function Login() {
         });
     }
   };
+            const newLogin = {
+                reg_number: regNo,
+                password: password
+            };
 
   return (
     <div className="Login">
