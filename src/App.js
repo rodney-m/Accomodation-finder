@@ -81,12 +81,13 @@ function App() {
                       isLoggedIn={loggedIn}
                     />
 
-                    <Route
+                    <ProtectedRoute
                       exact
                       path="/apply/oncampus/:hostelNumber"
                       component={HostelView}
+                      isLoggedIn={loggedIn}
                     />
-                    <Route exact path="/apply/status" component={CheckStatus} />
+                    <ProtectedRoute exact path="/apply/status" component={CheckStatus} isLoggedIn={loggedIn} />
 
                     <DeanProtectedRoute
                       isAdmin={isAdmin}
