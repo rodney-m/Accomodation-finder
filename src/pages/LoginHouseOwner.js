@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./LoginHouseOwner.css";
 import LogInModal from "../components/LogInModal";
+import { LandlordLoginContext } from "../Helper/Context";
+import {useHistory} from "react-router-dom"
 
 function Login() {
+  const { isLandlordLoggedIn, setIsLandlordLoggedIn } = useContext(LandlordLoginContext);
+  let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -18,6 +22,9 @@ function Login() {
     } else if (password === "") {
         setMessage("Password field cannot be empty");
       setShowModal(true);
+    } else {
+      setIsLandlordLoggedIn(true);
+      history.push("/landlords/dashboard")
     }
   };
   return (
