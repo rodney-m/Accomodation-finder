@@ -47,7 +47,6 @@ function Login() {
           if (response.status === 200) {
             setLoggedIn(true);
             history.push("/apply");
-            console.log("logged in");
           } else {
             setMessage("Registration number and password did not match");
             setShowModal(true);
@@ -81,23 +80,23 @@ function Login() {
         password: password,
       };
 
-      axios
-        .post("http://localhost:5000/user/signup", newSignUp)
-        .then((response) => {
-          if (response.status === 200) {
-            setLoggedIn(true);
-            history.push("/apply");
-          } else {
-            setMessage("Registration number and password did not match");
-            setShowModal(true);
-          }
-        })
-        .catch((err) => {
-          setMessage("Login failed. Please try again!");
-          setShowModal(true);
-        });
-    }
-  };
+            axios
+                .post("http://localhost:5000/user/signup", newSignUp)
+                .then((response) => {
+                    if (response.status === 200) {
+                        setMessage("User account successfully creeated. Login to continue!");
+                        setShowModal(true);
+                    } else if (response.status === 404) {
+                        setMessage("Registration did not match any record. Please make sure you're registered!");
+                        setShowModal(true);
+                    }
+                })
+                .catch((err) => {
+                    setMessage("Sign up failed. Please try again!");
+                    setShowModal(true);
+                });
+        }
+    };
 
   return (
     <div className="Login">
