@@ -4,6 +4,12 @@ let User = require('../models/userModel');
 let Student = require('../models/studentModel');
 const jwt = require('jsonwebtoken');
 
+let fullName = '';
+let email = '';
+let paidTuition = '';
+let year = '';
+let dept = '';
+
 router.route('/signup').post((req, res, next) => {
     Student.findOne({ regNumber: req.body.reg_number })
         .then(student => {
@@ -71,10 +77,23 @@ router.post('/login', (req, res, next) => {
                         process.env.JWT_KEY, {
                             expiresIn: "1h"
                         });
-                    return res.status(200).json({
-                        message: "Successful login!",
-                        token: token
-                    })
+
+                    Student.findOne({ email: user.email })
+                        .then(student => {
+                            const details = {
+                                fullName: student.firstNames + " " + student.lastName,
+                                email: student.email,
+                                paidTuition: student.paidTuition,
+                                year: student.year,
+                                dept: student.dept,
+                                phoneNumber: student.phoneNumber
+                            };
+                            return res.status(200).send({
+                                message: "Successful login!",
+                                token: token,
+                                details
+                            })
+                        })
                 }
             })
         })
