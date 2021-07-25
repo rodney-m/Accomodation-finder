@@ -13,6 +13,7 @@ router.route('/add').post((req, res) => {
     const lastName = req.body.lastName;
     const address = req.body.address;
     const phoneNumber = req.body.phoneNumber;
+    const email = req.body.email;
     const year = req.body.year;
     const dept = req.body.dept;
     const paidTuition = Number(req.body.paidTuition);
@@ -23,6 +24,7 @@ router.route('/add').post((req, res) => {
         lastName,
         address,
         phoneNumber,
+        email,
         year,
         dept,
         paidTuition

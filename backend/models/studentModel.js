@@ -8,6 +8,7 @@ const studentSchema = new Schema({
     lastName: String,
     address: String,
     phoneNumber: String,
+    email: String,
     year: String,
     dept: String,
     paidTuition: Number

@@ -5,7 +5,7 @@ let Student = require('../models/studentModel');
 const jwt = require('jsonwebtoken');
 
 router.route('/signup').post((req, res, next) => {
-    Student.find({ regNumber: req.body.reg_number })
+    Student.findOne({ regNumber: req.body.reg_number })
         .then(student => {
             if (!student) {
                 return res.status(404).json({
