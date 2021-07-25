@@ -37,7 +37,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLandlordLoggedIn, setIsLandlordLoggedIn] = useState(false);
-  const [tuitionPayed, setTuitionPayed] = useState(50);
+  const [tuitionPayed, setTuitionPayed] = useState(80);
   const [currentTuition, setCurrentTuition] = useState(100);
   return (
     <div className="App">
