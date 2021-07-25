@@ -3,6 +3,20 @@ const bcrypt = require('bcrypt');
 let Admin = require('../models/adminModel');
 const jwt = require('jsonwebtoken');
 
+router.route('/add').post((req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const newAdmin = new Admin({
+        email,
+        password
+    });
+
+    newAdmin.save()
+        .then(() => res.json('Admin added.'))
+        .catch(error => res.status(400).json('Error:' + error));
+});
+
 router.post('/login', (req, res, next) => {
     Admin.findOne({ email: req.body.email })
         .then(admin => {
