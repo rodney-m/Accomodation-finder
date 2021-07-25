@@ -48,6 +48,7 @@ function Login() {
                     if (response.status === 200) {
                         setLoggedIn(true);
                         history.push("/apply");
+                        console.log("logged in")
                     } else {
                         setMessage("Registration number and password did not match");
                         setShowModal(true);
