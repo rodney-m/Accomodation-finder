@@ -17,7 +17,6 @@ function Login() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
-  const [clicked, setClicked] = useState(false);
 
   const toggler = (e) => {
     e.preventDefault();
@@ -26,7 +25,6 @@ function Login() {
 
   // on Login
   const onLogin = (e) => {
-    setClicked(true);
     e.preventDefault();
     if (regNo === "" && password === "") {
       setMessage("Registration Number and Password fields cannot be empty");
@@ -42,7 +40,6 @@ function Login() {
         reg_number: regNo.toUpperCase(),
         password: password,
       };
-      console.log(newLogin.reg_number);
       axios
         .post("http://localhost:5000/user/login", newLogin)
         .then((response) => {
@@ -50,6 +47,7 @@ function Login() {
             setLoggedIn(true);
             history.push("/apply");
           } else {
+            console.log(response.status);
             setMessage("Registration number and password did not match");
             setShowModal(true);
           }
@@ -58,9 +56,7 @@ function Login() {
           setMessage("Login failed. Please try again!");
           setShowModal(true);
         });
-        
     }
-    setClicked(false);
   };
 
   //On Sign Up
@@ -88,9 +84,7 @@ function Login() {
         .post("http://localhost:5000/user/signup", newSignUp)
         .then((response) => {
           if (response.status === 200) {
-            setMessage(
-              "User account successfully creeated. Login to continue!"
-            );
+            setMessage("User account successfully created. Login to continue!");
             setShowModal(true);
           } else if (response.status === 404) {
             setMessage(
@@ -139,7 +133,7 @@ function Login() {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />{" "}
-              <button className={clicked ? 'clicked' : ""} onClick={onLogin}> LOGIN </button>{" "}
+              <button onClick={onLogin}> LOGIN </button>{" "}
               <Link to="#" className="forgot-pass">
                 Forgot your password ?
               </Link>{" "}
