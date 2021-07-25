@@ -40,7 +40,7 @@ function Login() {
                 reg_number: regNo.toUpperCase(),
                 password: password,
             };
-
+            console.log(newLogin.reg_number)
             axios
                 .post("http://localhost:5000/user/login", newLogin)
                 .then((response) => {
