@@ -7,6 +7,7 @@ const studentSchema = new Schema({
     firstNames: String,
     lastName: String,
     address: String,
+    phoneNumber: String,
     year: String,
     dept: String,
     paidTuition: Number
