@@ -37,7 +37,7 @@ function Login() {
             setShowModal(true);
         } else {
             const newLogin = {
-                reg_number: regNo,
+                reg_number: regNo.toUpperCase(),
                 password: password,
             };
 
@@ -76,7 +76,7 @@ function Login() {
             setShowModal(true);
         } else {
             const newSignUp = {
-                reg_number: regNo,
+                reg_number: regNo.toUpperCase(),
                 password: password,
             };
 
