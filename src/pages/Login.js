@@ -48,6 +48,7 @@ function Login() {
                         setLoggedIn(true);
                         history.push("/apply");
                     } else {
+                        console.log(response.status);
                         setMessage("Registration number and password did not match");
                         setShowModal(true);
                     }
@@ -84,7 +85,7 @@ function Login() {
                 .post("http://localhost:5000/user/signup", newSignUp)
                 .then((response) => {
                     if (response.status === 200) {
-                        setMessage("User account successfully creeated. Login to continue!");
+                        setMessage("User account successfully created. Login to continue!");
                         setShowModal(true);
                     } else if (response.status === 404) {
                         setMessage("Registration did not match any record. Please make sure you're registered!");
