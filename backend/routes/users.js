@@ -41,39 +41,40 @@ router.route('/signup').post((req, res, next) => {
 
 });
 
-router.route('/login').post((req, res, next) => {
-        User.find({ email: req.body.email })
-            .exec()
-            .then(user => {
-                if (user.length < 1) {
+router.post('/login', (req, res, next) => {
+    console.log(req.body);
+    User.findOne({ reg_number: req.body.reg_number })
+        .then(user => {
+            console.log(user)
+            if (!user) {
+                return res.status(401).json({
+                    message: "User not found"
+                })
+            }
+            bcrypt.compare(req.body.password, user.password, (err, result) => {
+                if (err) {
                     return res.status(401).json({
-                        message: "Auth failed"
+                        message: "Gerara here"
+                    });
+                }
+                if (result) {
+                    const token = jwt.sign({
+                            email: user.email,
+                            userId: user._id.toString()
+                        },
+                        process.env.JWT_KEY, {
+                            expiresIn: "1h"
+                        });
+                    return res.status(200).json({
+                        message: "Successful login!",
+                        token: token
                     })
                 }
-                bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-                    if (err) {
-                        return res.status(401).json({
-                            message: "Auth failed"
-                        });
-                    }
-                    if (result) {
-                        const token = jwt.sign({
-                                email: user[0].email,
-                                userId: user[0]._id
-                            },
-                            process.env.JWT_KEY, {
-                                expiresIn: "1h"
-                            });
-                        return res.status(200).json({
-                            message: "auth successful",
-                            token: token
-                        })
-                    }
-                })
             })
-            .catch(err => {
-                console.log(err);
-            });
-    })
+        })
+        .catch(err => {
+            console.log(err);
+        });
+})
 
 module.exports = router;

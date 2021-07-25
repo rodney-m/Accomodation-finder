@@ -15,6 +15,9 @@ router.route('/add').post((req, res) => {
     const hostel = Number(req.body.hostel);
     const room_no = Number(req.body.room_no);
     const department = req.body.department;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const message = req.body.message;
     const status = req.body.status;
 
     const newApplication = new Application({
@@ -24,6 +27,9 @@ router.route('/add').post((req, res) => {
         year,
         hostel,
         room_no,
+        email,
+        phone,
+        message,
         department,
         status
     });

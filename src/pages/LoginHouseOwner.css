@@ -34,3 +34,15 @@
     color: white;
     border: 0;
 }
+
+a{
+    color: cornflowerblue;
+    font-size: 0.8rem;
+    margin-top: 16px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
