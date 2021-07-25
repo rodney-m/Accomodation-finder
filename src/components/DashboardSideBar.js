@@ -5,6 +5,7 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import HouseIcon from "@material-ui/icons/House";
 import NotificationImportantIcon from "@material-ui/icons/NotificationImportant";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 function DashboardSideBar() {
   return (
@@ -42,6 +43,11 @@ function DashboardSideBar() {
           <Link to="/dashboard/off-campus">
             <li>
               <HomeWorkIcon /> Off Campus
+            </li>
+          </Link>
+          <Link to="/dashboard/set-fees">
+            <li>
+              <AccountBalanceWalletIcon /> Fees
             </li>
           </Link>
         </ul>
