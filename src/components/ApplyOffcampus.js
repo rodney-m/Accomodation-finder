@@ -5,8 +5,8 @@ import "./ApplyOffcampus.css"
 import {withRouter} from "react-router-dom"
 
 function ApplyOffcampus() {
-    const [price, setPrice] = useState(0);
-    const [houseType, setHouseType] =  useState('female');
+    const [price, setPrice] = useState(100);
+    const [houseType, setHouseType] =  useState('Mixed');
 
     
     return (
@@ -19,7 +19,9 @@ function ApplyOffcampus() {
              />
 
             <MainArea 
-             filteringPrice={price}/>
+             filteringPrice={price}
+             houseType={houseType}
+             />
         </div>
     )
 }
