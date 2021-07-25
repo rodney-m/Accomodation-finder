@@ -36,6 +36,8 @@ app.use('/offcampus', offCampusRouter);
 const studentRouter = require('./routes/students');
 app.use('/students', studentRouter);
 
+const adminRouter = require('./routes/admin');
+app.use('/admin', adminRouter);
 // const imagesRouter = require("./routes/web");
 // app.use(express.urlencoded({ extended: true }));
 // imagesRouter(app);
