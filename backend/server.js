@@ -33,6 +33,9 @@ app.use('/hostels', hostelsRouter);
 const offCampusRouter = require('./routes/offcampus');
 app.use('/offcampus', offCampusRouter);
 
+const studentRouter = require('./routes/students');
+app.use('/students', studentRouter);
+
 // const imagesRouter = require("./routes/web");
 // app.use(express.urlencoded({ extended: true }));
 // imagesRouter(app);
