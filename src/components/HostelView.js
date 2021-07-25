@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -8,9 +8,12 @@ import "./HostelView.css";
 import Image from "../images/hostel-pic1.jpg";
 
 import { GiCctvCamera } from "react-icons/gi";
-import {  FaWifi} from "react-icons/fa";
+import { FaWifi } from "react-icons/fa";
+import LogInModal from "../components/LogInModal";
 
 function HostelView() {
+  const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
   const hostelNumber = useParams();
   const hostels = useSelector((state) => state.hostels);
 
@@ -18,6 +21,8 @@ function HostelView() {
 
   const onApply = (e) => {
     e.preventDefault();
+    setMessage("Thank you for applying, you can check your status from your dashboard")
+    setShowModal(true)
   };
 
   return (
@@ -52,6 +57,11 @@ function HostelView() {
           </div>
         </div>
       </div>
+      {showModal ? (
+        <LogInModal setShowModal={setShowModal} message={message} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
