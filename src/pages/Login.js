@@ -14,6 +14,7 @@ function Login() {
     let history = useHistory();
     const [regNo, setRegNo] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [message, setMessage] = useState("");
 
@@ -43,6 +44,46 @@ function Login() {
 
             axios
                 .post("http://localhost:5000/user/login", newLogin)
+                .then((response) => {
+                    if (response.status === 200) {
+                        setLoggedIn(true);
+                        history.push("/apply");
+                    } else {
+                        setMessage("Registration number and password did not match");
+                        setShowModal(true);
+                    }
+                })
+                .catch((err) => {
+                    setMessage("Login failed. Please try again!");
+                    setShowModal(true);
+                });
+        }
+    };
+
+    //On Sign Up
+    const onSignUp = (e) => {
+        e.preventDefault();
+        if (regNo === "" && password === "") {
+            setMessage("Registration Number and Password fields cannot be empty");
+            setShowModal(true);
+        } else if (regNo === "") {
+            setMessage("Registration Number field cannot be empty");
+            setShowModal(true);
+        } else if (password === "") {
+            setMessage("Password field cannot be empty");
+            setShowModal(true);
+        } else if (!(password === confirmPassword)) {
+            setMessage("Passwords mismatch!");
+            setShowModal(true);
+        } else {
+
+            const newSignUp = {
+                reg_number: regNo,
+                password: password
+            };
+
+            axios
+                .post("http://localhost:5000/user/signup", newSignUp)
                 .then((response) => {
                     if (response.status === 200) {
                         setLoggedIn(true);
@@ -116,15 +157,24 @@ function Login() {
         div className = "input-container" >
         <
         input type = "text"
-        placeholder = "Registration No." / >
-        <
+        placeholder = "Registration No."
+        onChange = {
+            (e) => setRegNo(e.target.value)
+        }
+        / > <
         input type = "password"
-        placeholder = "Create A Password" / >
-        <
+        placeholder = "Create A Password"
+        onChange = {
+            (e) => setPassword(e.target.value)
+        }
+        / > <
         input type = "password"
-        placeholder = "Confirm Password" / >
-        <
-        button > REGISTER < /button>{" "} < /
+        placeholder = "Confirm Password"
+        onChange = {
+            (e) => setConfirmPassword(e.target.value)
+        }
+        / > <
+        button onClick = { onSignUp } > REGISTER < /button>{" "} < /
         div > { " " } <
         /form>{" "} < /
         div > { " " } <
