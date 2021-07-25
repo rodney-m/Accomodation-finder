@@ -15,7 +15,6 @@ function LogInModal({setShowModal, message}) {
     }
     return (
         <div className="LogInModal">
-            <h3>Error</h3>
             <GrClose className="closeX" onClick={onClose} />
             <hr />
             <p>

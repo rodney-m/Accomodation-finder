@@ -30,7 +30,7 @@ function SetFees() {
     <div>
       <form className={classes.root} noValidate autoComplete="off">
         <h3>Set Tuition Fees</h3>
-        <h4>Current set Tuition is : {fees}$</h4>
+        <h4>Current set Tuition is $: {currentTuition}</h4>
 
         <TextField
           id="filled-basic"
