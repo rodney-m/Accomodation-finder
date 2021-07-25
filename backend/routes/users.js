@@ -42,10 +42,10 @@ router.route('/signup').post((req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     User.findOne({ reg_number: req.body.reg_number })
         .then(user => {
-            console.log(user)
+            // console.log(user)
             if (!user) {
                 return res.status(401).json({
                     message: "User not found"
