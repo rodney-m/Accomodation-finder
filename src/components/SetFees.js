@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { IconButton } from "@material-ui/core";
+import { Tuition } from "../Helper/Context";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function SetFees() {
+  const { currentTuition, setCurrentTuition } = useContext(Tuition);
     const [fees, setFees] = useState(0);
 
     const onSetFees = (e) => {
