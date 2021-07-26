@@ -15,3 +15,6 @@ export const PayedTuition = createContext({});
 //fees
 export const Tuition = createContext({});
 
+//currently loggedIn student
+export const LoggedInAsContext = createContext({});
+

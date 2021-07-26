@@ -5,18 +5,20 @@ import LogInModal from "../components/LogInModal";
 
 import { useHistory } from "react-router-dom";
 import { LoginContext } from "../Helper/Context";
+import { LoggedInAsContext } from "../Helper/Context";
 
 import axios from "axios";
 
 function Login() {
   const { loggedIn, setLoggedIn } = useContext(LoginContext);
+  const { loggedInAs, setLoggedInAs } = useContext(LoggedInAsContext);
   const [toggle, setToggle] = useState(true);
   let history = useHistory();
   const [regNo, setRegNo] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("")
 
   const toggler = (e) => {
     e.preventDefault();
@@ -46,6 +48,8 @@ function Login() {
           if (response.status === 200) {
             setLoggedIn(true);
             history.push("/apply");
+
+            setLoggedInAs(response.data.details);
           } else {
             console.log(response.status);
             setMessage("Registration number and password did not match");
