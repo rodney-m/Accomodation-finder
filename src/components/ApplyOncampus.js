@@ -14,7 +14,6 @@ function ApplyOnCampus() {
 
   const hostels = useSelector(state => state.hostels)
 
-
   return (
     < div className="relative">
     <div className="ApplyOncampus">

@@ -75,6 +75,7 @@ router.post('/login', (req, res, next) => {
                     Student.findOne({ email: user.email })
                         .then(student => {
                             const details = {
+                                regNumber: student.regNumber,
                                 fullName: student.firstNames + " " + student.lastName,
                                 email: student.email,
                                 paidTuition: student.paidTuition,

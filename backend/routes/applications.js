@@ -7,30 +7,28 @@ router.route('/').get((req, res) => {
         .catch(error => res.status(400).json('Error:' + error));
 });
 
-router.route('/add').post((req, res) => {
-    const reg_no = req.body.reg_no;
-    const fname = req.body.fname;
-    const lname = req.body.lname;
+router.route('/oncampus').post((req, res) => {
+    const regNumber = req.body.regNumber;
+    const fullName = req.body.fullName;
     const year = req.body.year;
-    const hostel = Number(req.body.hostel);
-    const room_no = Number(req.body.room_no);
     const department = req.body.department;
+    const hostel = req.body.hostel;
+    const roomNumber = req.body.roomNumber;
+    const phone = req.body.year;
     const email = req.body.email;
-    const phone = req.body.phone;
     const message = req.body.message;
-    const status = req.body.status;
+    const status = req.body.status
 
     const newApplication = new Application({
-        reg_no,
-        fname,
-        lname,
+        regNumber,
+        fullName,
         year,
-        hostel,
-        room_no,
-        email,
-        phone,
-        message,
         department,
+        hostel,
+        roomNumber,
+        phone,
+        email,
+        message,
         status
     });
 

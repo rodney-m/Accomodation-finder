@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
     regNumber: { type: String, required: true },
-    firstName: { type: String },
-    lastName: { type: String },
+    fullName: { type: String },
     year: { type: String },
     department: { type: String },
     hostel: { type: Number },
