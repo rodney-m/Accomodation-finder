@@ -12,7 +12,7 @@ import Icon from "@material-ui/core/Icon";
 import HouseImg from "../images/off-campus-01.jpg";
 import axios from 'axios';
 
-function ApplyOffMain({filteringPrice}) {
+function ApplyOffMain({filteringPrice, houseType}) {
   const [houses, setHouses] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,10 @@ function ApplyOffMain({filteringPrice}) {
 
   let filteredHouses;
   filteredHouses = houses.filter((house)  => {
-    return house.price < filteringPrice
+    return house.price <= filteringPrice
+  })
+  filteredHouses = filteredHouses.filter((house) => {
+    return house.gender === houseType
   })
 
   const [apply, setApply] = useState(false);

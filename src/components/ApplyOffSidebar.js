@@ -39,12 +39,12 @@ function ApplyOffSidebar({price, setPrice, houseType, setHouseType}) {
             onChange={upDateHouseType}
           >
             <FormControlLabel
-              value="female"
+              value="Female"
               control={<Radio color="primary" />}
               label="Female"
             />
-            <FormControlLabel value="male" control={<Radio color="primary"  />} label="Male" />
-            <FormControlLabel value="mixed" control={<Radio color="primary"  />} label="Mixed" />
+            <FormControlLabel value="Male" control={<Radio color="primary"  />} label="Male" />
+            <FormControlLabel value="Mixed" control={<Radio color="primary"  />} label="Mixed" />
             
           </RadioGroup>
         </FormControl>

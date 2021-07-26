@@ -7,7 +7,6 @@ import {increment} from '../actions'
 function Overview() {
 
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter)
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -26,8 +25,7 @@ function Overview() {
             <div><PieChart data={data[1]} /></div>
             <div><PieChart data={data[2]} /></div>
             <div><PieChart data={data[3]} /></div>
-            {counter}
-            <button onClick={() => dispatch(increment())}>+</button>
+            
             </div>
             }      
         </div>

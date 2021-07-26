@@ -10,6 +10,7 @@ import H4 from "./H4";
 import Requests from "./Requests";
 import OffCampus from "./Offcampus";
 import Error from "../pages/Error";
+import SetFees from "./SetFees";
 
 function DashboardMain() {
     
@@ -36,6 +37,9 @@ function DashboardMain() {
             </Route>
             <Route exact path="/dashboard/off-campus">
                 <OffCampus />
+            </Route>
+            <Route exact path="/dashboard/set-fees">
+                <SetFees  />
             </Route>
             <Route >
              <Error />
