@@ -7,14 +7,22 @@ router.route('/add').post((req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    const newAdmin = new Admin({
-        email,
-        password
-    });
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            return res.status(500).json({
+                error: err
+            });
+        } else {
+            const newAdmin = new Admin({
+                email: email,
+                password: hash
+            });
 
-    newAdmin.save()
-        .then(() => res.json('Admin added.'))
-        .catch(error => res.status(400).json('Error:' + error));
+            newAdmin.save()
+                .then(() => res.json('Admin added.'))
+                .catch(error => res.status(400).json('Error:' + error));
+        }
+    })
 });
 
 router.post('/login', (req, res, next) => {
