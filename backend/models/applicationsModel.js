@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
-    reg_no: { type: String, required: true },
-    fname: { type: String, required: true },
-    lname: { type: String, required: true },
-    year: { type: String, required: true },
-    department: { type: String, required: true },
+    regNumber: { type: String, required: true },
+    firstName: { type: String },
+    lastName: { type: String },
+    year: { type: String },
+    department: { type: String },
     hostel: { type: Number },
-    room_no: { type: Number },
+    roomNumber: { type: Number },
     phone: { type: String },
     email: { type: String },
     message: { type: String },

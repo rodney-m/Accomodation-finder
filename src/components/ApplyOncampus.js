@@ -42,7 +42,6 @@ function ApplyOnCampus() {
           </Link>
         );
       })}
-
      
     </div>
     {hostelCurrentIndex !== null ? <ViewHostel hostel={hostels[hostelCurrentIndex]} setHostelCurrentIndex={setHostelCurrentIndex}/> : ""}
