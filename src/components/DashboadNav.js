@@ -28,8 +28,8 @@ function DashboadNav() {
           LogOut
           </Button> 
         </IconButton>
-        <p className="user">Rodney Mupanduki</p>
-        <AccountCircleIcon />
+        {/* <p className="user">Rodney Mupanduki</p>
+        <AccountCircleIcon /> */}
       </div>
     </div>
   );

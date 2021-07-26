@@ -58,7 +58,7 @@ export default function HouseOwnerCreateAcc() {
         div className = "HouseOwnerCreateAcc {classes.root}" >
         <
         p className = "redirect" >
-        Take me < Link to = "/" > & lt; & lt; Back Home < /Link> <
+        Take me < Link to = "/" > &lt; &lt; Back Home < /Link> <
         /p> <
         div className = "container" >
         <

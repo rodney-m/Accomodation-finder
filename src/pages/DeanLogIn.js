@@ -36,6 +36,7 @@ function Login() {
           if (response.status === 200) {
             setIsAdmin(true);
             history.push("/dashboard");
+            console.log(response.data)
           } else {
             console.log(response.status);
             setMessage("Registration number and password did not match");
