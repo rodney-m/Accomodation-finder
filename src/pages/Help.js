@@ -53,7 +53,7 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            X
+            A student first has to create an account then login, for them to be able to apply for housing. A landlord has to create an account and post details of his/her house , then the Dean of students will approve if the house can be listed on the platform.
           </Typography>
         </AccordionDetails>
       </Accordion>
